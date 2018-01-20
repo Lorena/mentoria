@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/siscom123.iml" filepath="$PROJECT_DIR$/siscom123.iml" />
+      <module fileurl="file://$PROJECT_DIR$/siscom.iml" filepath="$PROJECT_DIR$/siscom.iml" />
     </modules>
   </component>
 </project>
