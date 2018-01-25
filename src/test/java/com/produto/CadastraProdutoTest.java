@@ -65,4 +65,14 @@ public class CadastraProdutoTest {
         assertThat(mensagem, is("Produto nao cadastrado"));
 
     }
+
+    @Test
+    public void deveAdicionarProdutoNaListaProduto() throws Exception{
+        Date dataFutura = new SimpleDateFormat("yyyyMMdd").parse("20180120");
+        CadastraProduto cadastrarProduto = new CadastraProduto();
+       String mensagem = cadastrarProduto.cadastrar("1", null, 0, 0, 0, dataFutura);
+
+       listaProdutos(add);
+        assertThat(mensagem, is("Produto nao cadastrado"));
+    }
 }

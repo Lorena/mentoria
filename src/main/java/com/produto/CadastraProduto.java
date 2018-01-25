@@ -21,4 +21,5 @@ public class CadastraProduto {
         Date dataAtual = dateFormat.parse(dateAtualString);
         return dataCadastro.after(dataAtual);
     }
+
 }
