@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import com.produto.model.Produto;
 
 public class CadastraProduto {
     private ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
@@ -24,5 +25,4 @@ public class CadastraProduto {
         Date dataAtual = dateFormat.parse(dateAtualString);
         return dataCadastro.after(dataAtual);
     }
-
 }
