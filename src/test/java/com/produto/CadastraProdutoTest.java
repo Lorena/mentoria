@@ -1,9 +1,12 @@
 package com.produto;
 
+import com.produto.model.Produto;
 import org.junit.Test;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -17,62 +20,55 @@ public class CadastraProdutoTest {
     public void deveCadastrarProdutoComSucesso() throws Exception {
 
         CadastraProduto cadastraProduto = new CadastraProduto(); //Arrange
-        String codigo = "1";
+        int codigo = 1;
         String nome = "Nome do Produto";
         double preco = 1.00;
         int quantidadeEstoque = 2;
         int estoqueMinima = 1;
-        Date dataOntem = new SimpleDateFormat("yyyyMMdd").parse("20180118");
+        Date dataCadastro = new SimpleDateFormat("yyyyMMdd").parse("20180118");
 
-        String mensagem = cadastraProduto.cadastrar(codigo, nome, preco, quantidadeEstoque, estoqueMinima, dataOntem); //Action
+       Produto produto = cadastraProduto.cadastrar(codigo, nome, preco, quantidadeEstoque, estoqueMinima, dataCadastro); //Action
 
-        assertThat(mensagem, is("Cadastrada com sucesso!!")); //Assert
+        assertThat(produto.getCodigo(), is(codigo)); //Assert
+        assertThat(produto.getNome(), is(nome));
+        assertThat(produto.getPreco(), is(preco));
+        assertThat(produto.getQuantidadeEstoque(), is(quantidadeEstoque));
+        assertThat(produto.getEstoqueMinima(), is(estoqueMinima));
+        assertThat(produto.getDataCadastro(), is(dataCadastro));
     }
 
     @Test
     public void deveExistirCodigoQuandoForCadastrarOProduto() throws Exception {
 
         CadastraProduto cadastrarProduto = new CadastraProduto();
-        String codigo = "1";
+        int codigo = 1;
 
         Date dataOntem = new SimpleDateFormat("yyyyMMdd").parse("20180118");
 
-        String mensagem = cadastrarProduto.cadastrar(codigo, null, 0, 0, 0, dataOntem);
+        Produto produto = cadastrarProduto.cadastrar(codigo, null, 0, 0, 0, dataOntem);
 
-        assertThat(mensagem, is("Cadastrada com sucesso!!"));
-
+        assertThat(produto.getCodigo(), is(codigo));
     }
 
-    @Test
+    @Test (expected = Exception.class)
     public void naoDeveCadastrarProdutoQuandoNaoExistirCodigo() throws Exception {
 
         CadastraProduto cadastrarProduto = new CadastraProduto();
 
-        String mensagem = cadastrarProduto.cadastrar(null, null, 0, 0, 0, null);
-
-        assertThat(mensagem, is("Produto nao cadastrado"));
+       cadastrarProduto.cadastrar(0, null, 0, 0, 0, null);
     }
 
-    @Test
+    @Test (expected = Exception.class)
     public void naoDeveCadastrarProdutoQuandoADataForDepoisDoDiaAtual() throws Exception {
 
-        Date dataFutura = new SimpleDateFormat("yyyyMMdd").parse("20180120");
+        Date dataHoje = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(dataHoje);
+        calendar.add(Calendar.DAY_OF_MONTH, 1);
+        Date amanha = calendar.getTime();
 
         CadastraProduto cadastrarProduto = new CadastraProduto();
 
-        String mensagem = cadastrarProduto.cadastrar("1", null, 0, 0, 0, dataFutura);
-
-        assertThat(mensagem, is("Produto nao cadastrado"));
-
-    }
-
-    @Test
-    public void deveAdicionarProdutoNaListaProduto() throws Exception{
-        Date dataFutura = new SimpleDateFormat("yyyyMMdd").parse("20180120");
-        CadastraProduto cadastrarProduto = new CadastraProduto();
-       String mensagem = cadastrarProduto.cadastrar("1", null, 0, 0, 0, dataFutura);
-
-       listaProdutos(add);
-        assertThat(mensagem, is("Produto nao cadastrado"));
+        cadastrarProduto.cadastrar(1, null, 0, 0, 0, amanha);
     }
 }
