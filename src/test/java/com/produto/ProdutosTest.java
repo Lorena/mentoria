@@ -62,8 +62,8 @@ public class ProdutosTest {
 
     @Test
     public void devePegarProdutoCadastradoNaDataInformada() throws Exception {
-        //Erica fazer o teste e implementar o método para fazer o teste passar.
         Date dataCadastro = new SimpleDateFormat("yyyyMMdd").parse("20180118");
+
         List<Produto> produtosPorData = produtos.getProdutosPorData(dataCadastro);
 
         assertThat(produtosPorData.size(), is(2));
