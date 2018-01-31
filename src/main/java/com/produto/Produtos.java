@@ -1,7 +1,6 @@
 package com.produto;
 
 import com.produto.model.Produto;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,7 +12,7 @@ public class Produtos {
     public List<Produto> cadastraProdutos(int codigo, String nome, double preco, int quantidadeEstoque, int estoqueMinima, Date dataCadastro) throws Exception {
         CadastraProduto cadastraProduto = new CadastraProduto();
 
-        //Erica implementar o método para o teste passar
+         produtos.add(cadastraProduto.cadastrar(codigo, nome, preco, quantidadeEstoque, estoqueMinima, dataCadastro));
 
         return produtos;
     }
