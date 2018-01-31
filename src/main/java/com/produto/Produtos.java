@@ -30,10 +30,13 @@ public class Produtos {
     }
 
         public List<Produto> getProdutosPorNome(String nome) {
-
-        //Erica Implementar o método para o teste passar
-
-        return null;
+            List<Produto> produtoPesquisadoPorNome = new ArrayList<Produto>();
+            for(Produto produto : produtos){
+                if(produto.getNome().equals(nome)){
+                    produtoPesquisadoPorNome.add(produto);
+                }
+            }
+        return produtoPesquisadoPorNome;
     }
 
     public List<Produto> getProdutosPorData(Date dataCadastro){
