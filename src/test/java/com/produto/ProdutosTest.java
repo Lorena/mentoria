@@ -63,6 +63,8 @@ public class ProdutosTest {
     @Test
     public void devePegarProdutoCadastradoNaDataInformada() throws Exception {
         Date dataCadastro = new SimpleDateFormat("yyyyMMdd").parse("20180118");
+        produtos.cadastraProdutos(1, "Nome1", 100, 1, 2, dataCadastro);
+        produtos.cadastraProdutos(2, "Nome2", 101, 0, 2, dataCadastro);
 
         List<Produto> produtosPorData = produtos.getProdutosPorData(dataCadastro);
 
