@@ -30,10 +30,20 @@ public class Produtos {
         return produtoQueTemNoEstoque;
     }
 
-    public List<Produto> getProdutosPorNome(String nome) {
+        public List<Produto> getProdutosPorNome(String nome) {
 
         //Erica Implementar o método para o teste passar
 
         return null;
+    }
+
+    public List<Produto> getProdutosPorData(Date dataCadastro){
+        List<Produto> produtoCadastradoNestaData = new ArrayList<Produto>();
+        for(Produto produto : produtos){
+            if(produto.getDataCadastro().equals(dataCadastro)){
+               produtoCadastradoNestaData.add(produto);
+            }
+        }
+        return produtoCadastradoNestaData;
     }
 }
