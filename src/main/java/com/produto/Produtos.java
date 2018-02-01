@@ -29,7 +29,7 @@ public class Produtos {
         return produtoQueTemNoEstoque;
     }
 
-        public List<Produto> getProdutosPorNome(String nome) {
+    public List<Produto> getProdutosPorNome(String nome) {
             List<Produto> produtoPesquisadoPorNome = new ArrayList<Produto>();
             for(Produto produto : produtos){
                 if(produto.getNome().equals(nome)){
@@ -49,8 +49,13 @@ public class Produtos {
         return produtoCadastradoNestaData;
     }
 
-    public List<Produto> getProdutosComPrecoMaiorDoQuePrecoInformado(int i) {
-
-        return null;
+    public List<Produto> getProdutosComPrecoMaiorDoQuePrecoInformado(int preco) {
+        List<Produto> produtosComPrecoMaior = new ArrayList<Produto>();
+        for(Produto produto : produtos){
+            if(preco > produto.getPreco()){
+                produtosComPrecoMaior.add(produto);
+            }
+        }
+        return produtosComPrecoMaior;
     }
 }

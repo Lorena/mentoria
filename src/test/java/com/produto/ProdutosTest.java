@@ -78,7 +78,7 @@ public class ProdutosTest {
         produtos.cadastraProdutos(1, "Nome1", 100, 1, 2, dataCadastro);
         produtos.cadastraProdutos(2, "Nome2", 101, 0, 2, dataCadastro);
 
-        List<Produto> produtosPrecoMaior = produtos.getProdutosComPrecoMaiorDoQuePrecoInformado(100);
+        List<Produto> produtosPrecoMaior = produtos.getProdutosComPrecoMaiorDoQuePrecoInformado(101);
 
         assertThat(produtosPrecoMaior.size(), is(1));
     }
