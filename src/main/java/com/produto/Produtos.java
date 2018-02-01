@@ -48,4 +48,9 @@ public class Produtos {
         }
         return produtoCadastradoNestaData;
     }
+
+    public List<Produto> getProdutosComPrecoMaiorDoQuePrecoInformado(int i) {
+
+        return null;
+    }
 }

@@ -74,6 +74,12 @@ public class ProdutosTest {
     @Test
     public void devePegarProdutoComPrecoMaiorDoQuePrecoInformado() throws Exception {
         //Erica fazer o teste e implementar o método para fazer o teste passar.
+        Date dataCadastro = new SimpleDateFormat("yyyyMMdd").parse("20180118");
+        produtos.cadastraProdutos(1, "Nome1", 100, 1, 2, dataCadastro);
+        produtos.cadastraProdutos(2, "Nome2", 101, 0, 2, dataCadastro);
 
+        List<Produto> produtosPrecoMaior = produtos.getProdutosComPrecoMaiorDoQuePrecoInformado(100);
+
+        assertThat(produtosPrecoMaior.size(), is(1));
     }
 }
