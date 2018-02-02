@@ -44,7 +44,6 @@ public class ProdutosTest {
         assertThat(produtosTemNoEstoque.size(), is(1));
     }
 
-
     @Test
     public void devePegarProdutoPeloNome() throws Exception {
 
@@ -58,7 +57,6 @@ public class ProdutosTest {
         assertThat(produtosPorNome.get(0).getNome(), is("Nome2"));
 
     }
-
 
     @Test
     public void devePegarProdutoCadastradoNaDataInformada() throws Exception {
@@ -77,7 +75,7 @@ public class ProdutosTest {
         produtos.cadastraProdutos(1, "Nome1", 100, 1, 2, dataCadastro);
         produtos.cadastraProdutos(2, "Nome2", 101, 0, 2, dataCadastro);
 
-        List<Produto> produtosPrecoMaior = produtos.getProdutosComPrecoMaiorDoQuePrecoInformado(101);
+        List<Produto> produtosPrecoMaior = produtos.getProdutosComPrecoMaiorDoQuePrecoInformado(100);
 
         assertThat(produtosPrecoMaior.size(), is(1));
     }

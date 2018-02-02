@@ -49,10 +49,10 @@ public class Produtos {
         return produtoCadastradoNestaData;
     }
 
-    public List<Produto> getProdutosComPrecoMaiorDoQuePrecoInformado(int preco) {
+    public List<Produto> getProdutosComPrecoMaiorDoQuePrecoInformado(int precoInformado) {
         List<Produto> produtosComPrecoMaior = new ArrayList<Produto>();
         for(Produto produto : produtos){
-            if(preco > produto.getPreco()){
+            if(produto.getPreco() > precoInformado){
                 produtosComPrecoMaior.add(produto);
             }
         }
