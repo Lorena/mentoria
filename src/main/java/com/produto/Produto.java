@@ -1,4 +1,4 @@
-package com.produto.model;
+package com.produto;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -6,25 +6,25 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Produto {
-        private int codigo;
-        private String nome;
-        private double preco;
-        private int quantidadeEstoque;
-        private int estoqueMinima;
-        private Date dataCadastro;
+    private int codigo;
+    private String nome;
+    private double preco;
+    private int quantidadeEstoque;
+    private int estoqueMinima;
+    private Date dataCadastro;
 
     public Produto(int codigo, String nome, double precoUnitario, int estoque, int estoqueMinimo,
-                       Date dataCadastro) throws Exception{
-        if(codigo == 0 || validaDataCadastro(dataCadastro)) {
+                   Date dataCadastro) throws Exception {
+        if (codigo == 0 || validaDataCadastro(dataCadastro)) {
             throw new Exception("Produto não cadastrado");
         }
-            this.codigo = codigo;
-            this.nome = nome;
-            this.preco = precoUnitario;
-            this.quantidadeEstoque = estoque;
-            this.estoqueMinima = estoqueMinimo;
-            this.dataCadastro = dataCadastro;
-        }
+        this.codigo = codigo;
+        this.nome = nome;
+        this.preco = precoUnitario;
+        this.quantidadeEstoque = estoque;
+        this.estoqueMinima = estoqueMinimo;
+        this.dataCadastro = dataCadastro;
+    }
 
     private boolean validaDataCadastro(Date dataCadastro) throws ParseException {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -51,5 +51,9 @@ public class Produto {
 
     public double getPreco() {
         return preco;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }

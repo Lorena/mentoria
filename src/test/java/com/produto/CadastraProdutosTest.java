@@ -1,6 +1,5 @@
 package com.produto;
 
-import com.produto.model.Produto;
 import org.junit.Before;
 import org.junit.Test;
 

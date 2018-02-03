@@ -1,4 +1,4 @@
-package com.produto.model;
+package com.produto;
 
 import org.junit.Test;
 
