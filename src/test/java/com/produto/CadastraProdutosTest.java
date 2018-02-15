@@ -1,6 +1,5 @@
 package com.produto;
 
-import com.produto.model.Produto;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -31,6 +30,4 @@ public class CadastraProdutosTest {
         produtoList = cadastraProdutos.cadastraProdutos(2, "Nome2", 0, 1, 2, dataCadastro);
         assertThat(produtoList.size(), is(2));
     }
-
-
 }

@@ -1,6 +1,5 @@
 package com.produto;
 
-import com.produto.model.Produto;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

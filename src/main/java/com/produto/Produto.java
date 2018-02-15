@@ -1,4 +1,4 @@
-package com.produto.model;
+package com.produto;
 
 import java.text.DateFormat;
 import java.text.ParseException;
