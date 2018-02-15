@@ -15,9 +15,14 @@ public class RemoveProdutosTest {
 
     @Test
     public void deveRemoverUmProdutoComSucesso() throws Exception {
+        Produto produto1 = new Produto(1, "Nome1", 0, 1, 2, new SimpleDateFormat("yyyyMMdd").parse("20180118"));
+        Produto produto2 = new Produto(2, "Nome2", 0, 1, 2, new SimpleDateFormat("yyyyMMdd").parse("20180118"));
+        List<Produto> produtos = new ArrayList<Produto>();
+        produtos.add(produto1);
+        produtos.add(produto2);
 
-       //Erica fazer somente o teste.
-
+        RemoveProdutos removeProdutos = new RemoveProdutos(produtos);
+        removeProdutos.removeProduto(2);
     }
 
     @Test(expected = Exception.class)
