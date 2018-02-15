@@ -25,9 +25,15 @@ public class EditaProdutosTest {
         assertThat(produto.getNome(), is("Nome2"));
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void retornaExceptionQuandoNaoEncontraProduto() throws Exception {
         //Erica fazer
+        List<Produto> produtos = new ArrayList<Produto>();
+        //produtos.add(produto2);
+
+        EditaProdutos editaProdutos = new EditaProdutos(produtos);
+
+        Produto produto = editaProdutos.editaNome(1, "Nome2");
     }
 
     //Erica criar novos testes que ela achar que pode ser legal para os produtos..
