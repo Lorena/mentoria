@@ -12,6 +12,12 @@ public class EditaProdutos {
 
     public Produto editaNome(int codigo, String nome) throws Exception {
         //Erica fazer
+        Produto produtoAntigo = getProduto(codigo);
+                for (Produto produto : produtos) {
+                    if (produtoAntigo.getCodigo() == codigo) {
+                        produtoAntigo.setNome(nome);
+                    }
+                }
         return null;
     }
 
