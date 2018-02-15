@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -23,6 +25,8 @@ public class RemoveProdutosTest {
 
         RemoveProdutos removeProdutos = new RemoveProdutos(produtos);
         removeProdutos.removeProduto(2);
+
+        assertThat(produtos.size(), is(1));
     }
 
     @Test(expected = Exception.class)
