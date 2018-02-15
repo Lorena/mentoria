@@ -11,14 +11,13 @@ public class EditaProdutos {
     }
 
     public Produto editaNome(int codigo, String nome) throws Exception {
-        //Erica fazer
-        Produto produtoAntigo = getProduto(codigo);
-                for (Produto produto : produtos) {
-                    if (produtoAntigo.getCodigo() == codigo) {
-                        produtoAntigo.setNome(nome);
+        Produto produto = getProduto(codigo);
+                for (Produto produtos : produtos) {
+                    if (produto.getCodigo() == codigo) {
+                        produto.setNome(nome);
                     }
                 }
-        return null;
+         return null;
     }
 
     private Produto getProduto(int codigo) throws Exception {

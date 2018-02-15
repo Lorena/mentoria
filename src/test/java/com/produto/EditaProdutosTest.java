@@ -22,7 +22,7 @@ public class EditaProdutosTest {
 
         Produto produto = editaProdutos.editaNome(1, "Nome2");
 
-        assertThat(produto.getNome(), is("Nome2"));
+        assertThat(produto2.getNome(), is("Nome2"));
     }
 
     @Test(expected = Exception.class)
@@ -36,6 +36,5 @@ public class EditaProdutosTest {
 
         Produto produto = editaProdutos.editaNome(2, "Nome2");
     }
-
     //Erica criar novos testes que ela achar que pode ser legal para os produtos..
 }
