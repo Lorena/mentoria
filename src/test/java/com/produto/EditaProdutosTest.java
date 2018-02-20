@@ -21,7 +21,7 @@ public class EditaProdutosTest {
         EditaProdutos editaProdutos = new EditaProdutos(produtos);
 
         Produto produto = editaProdutos.editaNome(1, "Nome2");
-
+        //Você colocou no assertThat o "produto2", não deveria ser o "produto"? Afinal é ele que foi editado e retornado.
         assertThat(produto2.getNome(), is("Nome2"));
     }
 
