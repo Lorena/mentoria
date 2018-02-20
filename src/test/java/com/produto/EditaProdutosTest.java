@@ -22,7 +22,7 @@ public class EditaProdutosTest {
 
         Produto produto = editaProdutos.editaNome(1, "Nome2");
         //Você colocou no assertThat o "produto2", não deveria ser o "produto"? Afinal é ele que foi editado e retornado.
-        assertThat(produto2.getNome(), is("Nome2"));
+        assertThat(produto.getNome(), is("Nome2"));
     }
 
     @Test(expected = Exception.class)
