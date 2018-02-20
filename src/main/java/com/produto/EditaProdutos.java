@@ -12,7 +12,7 @@ public class EditaProdutos {
 
     public Produto editaNome(int codigo, String nome) throws Exception {
         Produto produto = getProduto(codigo);
-                for (Produto produtos : produtos) {
+                for (Produto produtos : produtos) {  //Não precisa desse for para buscar o produto, uma vez que na linha anterior ele já é buscado através do código.
                     if (produto.getCodigo() == codigo) {
                         produto.setNome(nome);
                     }
