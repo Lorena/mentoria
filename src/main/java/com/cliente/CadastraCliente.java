@@ -9,7 +9,7 @@ public class CadastraCliente {
 
     public List<Cliente> cadastraClientes(int codigo, String cpf, String nome, String telefone, String email,
                                           String endereco, Date dataCadastro) throws Exception {
-       return null;
+        clientes.add(new Cliente(codigo, cpf, nome, telefone, email, endereco, dataCadastro));
+       return clientes;
     }
-
 }

@@ -20,7 +20,6 @@ public class CadastraClienteTest {
         cadastraCliente = new CadastraCliente();
     }
 
-
 @Test
     public void deveCadastrarMultiplosClientes() throws Exception{
     Date dataCadastro = new SimpleDateFormat("yyyyMMdd").parse("20180220");
