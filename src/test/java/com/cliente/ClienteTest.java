@@ -8,6 +8,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class ClienteTest {
+
     @Test(expected = Exception.class)
     public void naoDeveCadastrarClienteQuandoNaoExistirCpf() throws Exception {
      new Cliente(2, null, "Erica", "98999-9999", "erica@email.com", "Rua ABC, 123", null);
@@ -27,4 +28,9 @@ public class ClienteTest {
 
         assertThat(cliente.getCodigo(), is(codigo));
 }
+
+    @Test(expected = Exception.class)
+    public void naoDeveCadastrarClienteSemUmCampoContato() throws Exception{
+        new Cliente(2, "136.707.026-01", "Erica", null, null, "Rua ABC, 123", null);
+    }
 }

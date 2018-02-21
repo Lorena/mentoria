@@ -12,8 +12,4 @@ public class CadastraClientes {
         produtos.add(new Cliente(codigo, cpf, nome, telefone, email, endereco, dataCadastro));
         return produtos;
     }
-
-    public int getCodigo() {
-        return codigo;
-    }
 }
