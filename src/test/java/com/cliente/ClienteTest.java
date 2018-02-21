@@ -2,17 +2,12 @@ package com.cliente;
 
 import org.junit.Test;
 import com.cliente.Cliente;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class ClienteTest {
-
-    //pode criar os testes com qualquer ideia que vc tiver....
-
     @Test(expected = Exception.class)
     public void naoDeveCadastrarClienteQuandoNaoExistirCpf() throws Exception {
      new Cliente(2, null, "Erica", "98999-9999", "erica@email.com", "Rua ABC, 123", null);
@@ -32,5 +27,4 @@ public class ClienteTest {
 
         assertThat(cliente.getCodigo(), is(codigo));
 }
-
 }
