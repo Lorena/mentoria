@@ -2,11 +2,9 @@ package com.produto;
 
 import com.produto.Produto;
 import org.junit.Test;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
