@@ -13,7 +13,7 @@ public class Cliente {
 
     public Cliente(int codigo, String cpf, String nome, String telefone, String email, String endereco, Date dataCadastro)
             throws Exception{
-        if (cpf == null || cpf == " "){
+        if (cpf == null || cpf == " " || telefone == null && email == null){
             throw new Exception("Produto não cadastrado.");
         }
         this.codigo = codigo;

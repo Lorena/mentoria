@@ -30,7 +30,7 @@ public class ClienteTest {
 }
 
     @Test(expected = Exception.class)
-    public void naoDeveCadastrarClienteSemUmCampoContato() throws Exception{
+    public void naoDeveCadastrarClienteSemPreencherUmContato() throws Exception{
         new Cliente(2, "136.707.026-01", "Erica", null, null, "Rua ABC, 123", null);
     }
 }
