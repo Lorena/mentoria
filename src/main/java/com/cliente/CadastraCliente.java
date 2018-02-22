@@ -12,4 +12,8 @@ public class CadastraCliente {
         clientes.add(new Cliente(codigo, cpf, nome, telefone, email, endereco, dataCadastro));
        return clientes;
     }
+
+    public List<Cliente> getClientesCadastrados() {
+        return clientes;
+    }
 }

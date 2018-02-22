@@ -8,7 +8,6 @@ public class ResgatarCliente {
 
     public List<Cliente> resgatarClientePeloCpf(String cpf) {
         List<Cliente> clienteComCpfInformado = new ArrayList<Cliente>();
-
         for(Cliente cliente : clientes){
             if (cliente.getCpf().equals(cpf)){
                clienteComCpfInformado.add(cliente);
