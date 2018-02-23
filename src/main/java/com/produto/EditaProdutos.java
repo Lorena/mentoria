@@ -15,7 +15,7 @@ public class EditaProdutos {
             if (produto.getCodigo() == codigo) {
                         produto.setNome(nome);
             }
-         return null;
+         return produto;
     }
 
     private Produto getProduto(int codigo) throws Exception {
