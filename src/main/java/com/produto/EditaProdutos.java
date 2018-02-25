@@ -13,7 +13,7 @@ public class EditaProdutos {
     public Produto editaNome(int codigo, String nome) throws Exception {
         Produto produto = getProduto(codigo);
             if (produto.getCodigo() == codigo) {
-                        produto.setNome(nome);
+                produto.setNome(nome);
             }
          return produto;
     }
