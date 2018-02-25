@@ -21,6 +21,12 @@ public class EditaCliente {
     }
 
     public Cliente editaTelefoneCliente(String cpf, String telefone) {
+        for(Cliente cliente : clienteList){
+            if(cliente.getCpf().equals(cpf)){
+                cliente.setTelefone(telefone);
+                return cliente;
+            }
+        }
         return null;
     }
 }
