@@ -33,4 +33,17 @@ public class EditaClienteTest {
 
         assertThat(clienteEditado.getTelefone(), is("98899-0011"));
     }
+
+   @Test
+   public void editaEmailCliente() throws Exception {
+       Cliente cliente = new Cliente(1, "123.456.789-00", "Erica", "98999-9999", "erica@email.com", "Rua ABC, 123", null);
+       List<Cliente> clienteList = new ArrayList<Cliente>();
+       clienteList.add(cliente);
+
+       EditaCliente editaCliente = new EditaCliente(clienteList);
+
+       Cliente clienteEditado = editaCliente.editaEmailCliente("123.456.789-00", "ericaviana@email.com");
+
+       assertThat(clienteEditado.getTelefone(), is("ericaviana@email.com"));
+   }
 }

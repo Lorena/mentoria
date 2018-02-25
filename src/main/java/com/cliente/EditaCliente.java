@@ -29,4 +29,8 @@ public class EditaCliente {
         }
         return null;
     }
+
+    public Cliente editaEmailCliente(String cpf, String email) {
+        return null;
+    }
 }
