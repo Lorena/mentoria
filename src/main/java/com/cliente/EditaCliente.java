@@ -19,4 +19,8 @@ public class EditaCliente {
         }
         return null;
     }
+
+    public Cliente editaTelefoneCliente(String cpf, String telefone) {
+        return null;
+    }
 }
