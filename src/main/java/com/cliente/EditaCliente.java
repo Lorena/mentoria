@@ -39,4 +39,8 @@ public class EditaCliente {
         }
         return null;
     }
+
+    public Cliente editaEnderecoCliente(String cpf, String endereco) {
+        return null;
+    }
 }

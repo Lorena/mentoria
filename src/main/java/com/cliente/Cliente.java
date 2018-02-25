@@ -57,4 +57,8 @@ public class Cliente {
     public String getEmail() {
         return email;
     }
+
+    public String getEndereco() {
+        return endereco;
+    }
 }

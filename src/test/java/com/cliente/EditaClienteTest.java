@@ -46,4 +46,17 @@ public class EditaClienteTest {
 
        assertThat(clienteEditado.getEmail(), is("ericaviana@email.com"));
    }
+
+   @Test
+    public void editaEnderecoCliente() throws Exception {
+       Cliente cliente = new Cliente(1, "123.456.789-00", "Erica", "98999-9999", "erica@email.com", "Rua ABC, 123", null);
+       List<Cliente> clienteList = new ArrayList<Cliente>();
+       clienteList.add(cliente);
+
+       EditaCliente editaCliente = new EditaCliente(clienteList);
+
+       Cliente clienteEditado = editaCliente.editaEnderecoCliente("123.456.789-00", "Rua ABCD, 1234");
+
+       assertThat(clienteEditado.getEndereco(), is("Rua ABCD, 1234"));
+   }
 }
