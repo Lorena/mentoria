@@ -31,6 +31,12 @@ public class EditaCliente {
     }
 
     public Cliente editaEmailCliente(String cpf, String email) {
+        for(Cliente cliente : clienteList){
+            if(cliente.getCpf().equals(cpf)){
+                cliente.setEmail(email);
+                return cliente;
+            }
+        }
         return null;
     }
 }

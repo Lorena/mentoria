@@ -44,6 +44,6 @@ public class EditaClienteTest {
 
        Cliente clienteEditado = editaCliente.editaEmailCliente("123.456.789-00", "ericaviana@email.com");
 
-       assertThat(clienteEditado.getTelefone(), is("ericaviana@email.com"));
+       assertThat(clienteEditado.getEmail(), is("ericaviana@email.com"));
    }
 }
