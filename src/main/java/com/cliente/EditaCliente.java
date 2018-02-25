@@ -41,6 +41,12 @@ public class EditaCliente {
     }
 
     public Cliente editaEnderecoCliente(String cpf, String endereco) {
+        for(Cliente cliente : clienteList){
+            if(cliente.getCpf().equals(cpf)){
+                cliente.setEndereco(endereco);
+                return cliente;
+            }
+        }
         return null;
     }
 }
