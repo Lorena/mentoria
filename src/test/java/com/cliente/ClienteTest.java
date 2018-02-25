@@ -27,11 +27,10 @@ public class ClienteTest {
         Cliente cliente = new Cliente(codigo, cpf, nome, telefone, email, endereco, dataCadastro);
 
         assertThat(cliente.getCodigo(), is(codigo));
-}
+    }
 
     @Test(expected = Exception.class)
     public void naoDeveCadastrarClienteSemPreencherUmContato() throws Exception{
-        Date dataCadastro = new SimpleDateFormat("yyyyMMdd").parse("20180220");
         new Cliente(2, "136.707.026-01", "Erica", null, null, "Rua ABC, 123", null);
     }
 }
