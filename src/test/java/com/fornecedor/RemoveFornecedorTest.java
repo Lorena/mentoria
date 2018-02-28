@@ -1,11 +1,9 @@
 package com.fornecedor;
 
 import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
@@ -21,7 +19,7 @@ public class RemoveFornecedorTest {
 
         String mensagem = removeFornecedor.removeFornecedorPorCnpj("12.345.678/0000-01");
 
-        assertThat(mensagem, is("Cliente foi removido com sucesso!!"));
+        assertThat(mensagem, is("Fornecedor excluido com sucesso."));
     }
 
 }

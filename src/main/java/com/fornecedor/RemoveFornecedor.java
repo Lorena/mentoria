@@ -11,6 +11,12 @@ public class RemoveFornecedor {
     }
 
     public String removeFornecedorPorCnpj(String cnpj) {
+        for(Fornecedor fornecedor : fornecedorList){
+            if(fornecedor.getCnpj().equals(cnpj)){
+                fornecedorList.remove(fornecedor);
+                return "Fornecedor excluido com sucesso.";
+            }
+        }
         return null;
     }
 }
