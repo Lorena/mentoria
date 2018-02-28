@@ -24,7 +24,7 @@ public class RemoveFornecedorTest {
     }
 
     @Test
-    public void deveVerificarSeRemoveFornecedor() throws Exception {
+    public void deveVerificarSeRemoveuFornecedor() throws Exception {
         List<Fornecedor> fornecedorList = new ArrayList<Fornecedor>();
         Date data = new Date();
         fornecedorList.add(new Fornecedor(1, "12.345.678/0000-01", "Forn1", "98888-9999", "forn1@email.com", data));

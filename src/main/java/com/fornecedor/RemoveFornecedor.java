@@ -5,7 +5,6 @@ import java.util.List;
 public class RemoveFornecedor {
 
     private List<Fornecedor> fornecedorList;
-    private List<Fornecedor> listaFornecedores;
 
     public RemoveFornecedor(List<Fornecedor> fornecedorList) {
         this.fornecedorList = fornecedorList;
@@ -22,6 +21,6 @@ public class RemoveFornecedor {
     }
 
     public List<Fornecedor> getListaFornecedores() {
-        return listaFornecedores;
+        return fornecedorList;
     }
 }
