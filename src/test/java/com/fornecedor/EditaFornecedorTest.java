@@ -15,7 +15,7 @@ public class EditaFornecedorTest {
         Fornecedor fornecedor = new Fornecedor(1, "12.345.678/0000-01", "Forn1", "98888-9999", "forn1@email.com", data);
 
         EditaFornecedor editaFornecedor = new EditaFornecedor();
-        String mensagem = editaFornecedor.editaNomeFornecedor("Fornecedor Um");
+        String mensagem = editaFornecedor.editaNomeFornecedor("12.345.678/0000-01", "Fornecedor Um");
 
         assertThat(mensagem, is("Fornecedor alterado com sucesso."));
     }
