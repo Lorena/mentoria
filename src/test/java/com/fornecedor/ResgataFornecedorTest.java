@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 
 public class ResgataFornecedorTest {
     private ResgataFornecedor resgataFornecedor;
-    private CadastraFornecedor cadastraFornecedor;
+    private CadastraFornecedor cadastraFornecedor = new CadastraFornecedor();
 
     @Test
     public void deveRetornarFornecedorPorCnpjInformado() throws Exception{
