@@ -30,4 +30,8 @@ public class Fornecedor {
     public int getCodigo() {
         return codigo;
     }
+
+    public void setNome(String nome) {
+        this.nome = this.nome;
+    }
 }
