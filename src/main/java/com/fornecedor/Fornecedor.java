@@ -22,4 +22,12 @@ public class Fornecedor {
         this.email = email;
         this.dataCadastro = dataCadastro;
     }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
 }
