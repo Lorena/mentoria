@@ -5,11 +5,16 @@ import java.util.List;
 public class ResgataFornecedor {
     private List<Fornecedor> fornecedorList;
 
-    public ResgataFornecedor(List<Fornecedor> fornecedoresCadastrados) {
-        this.fornecedorList = fornecedoresCadastrados;
+    public Fornecedor resgatarFornecedorPorCnpj(String cnpj) {
+        for(Fornecedor fornecedor : fornecedorList){
+            if(fornecedor.getCnpj().equals(cnpj)){
+                return fornecedor;
+            }
+        }
+        return null;
     }
 
-    public Fornecedor resgatarFornecedorPorCnpj(String cnpj) {
-        return null;
+    public ResgataFornecedor(List<Fornecedor> fornecedoresCadastrados) {
+        this.fornecedorList = fornecedoresCadastrados;
     }
 }
