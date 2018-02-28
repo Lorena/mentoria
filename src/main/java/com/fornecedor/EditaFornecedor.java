@@ -29,4 +29,14 @@ public class EditaFornecedor {
         }
         return null;
     }
+
+    public String editaEmailFornecedor(String cnpj, String email) {
+        for(Fornecedor fornecedor : fornecedorList){
+            if (fornecedor.getCnpj().equals(cnpj)) {
+                fornecedor.setEmail(email);
+                return "E-mail alterado com sucesso.";
+            }
+        }
+        return null;
+    }
 }
