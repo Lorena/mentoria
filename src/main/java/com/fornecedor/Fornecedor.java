@@ -34,4 +34,8 @@ public class Fornecedor {
     public void setNome(String nome) {
         this.nome = this.nome;
     }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 }

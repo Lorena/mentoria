@@ -19,4 +19,14 @@ public class EditaFornecedor {
         }
         return null;
     }
+
+    public String editaTelefoneFornecedor(String cnpj, String telefone) {
+        for(Fornecedor fornecedor : fornecedorList){
+            if (fornecedor.getCnpj().equals(cnpj)) {
+                fornecedor.setTelefone(telefone);
+                return "Telefone alterado com sucesso.";
+            }
+        }
+        return null;
+    }
 }
