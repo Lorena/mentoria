@@ -24,10 +24,10 @@ public class CadastraClienteTest {
     public void deveCadastrarMultiplosClientes() throws Exception{
         Date dataCadastro = new SimpleDateFormat("yyyyMMdd").parse("20180220");
 
-        List<Cliente> clienteList = cadastraCliente.cadastraClientes(1, "123.456.789-00", "Teste1", "98999-9999", "teste1@email.com", "Rua teste", dataCadastro);
+        List<Cliente> clienteList = cadastraCliente.cadastraClientes("123.456.789-00", "Teste1", "98999-9999", null, null);
         assertThat(clienteList.size(), is(1));
 
-        clienteList = cadastraCliente.cadastraClientes(2, "123.456.789-01", "Teste2", "98899-9999", "teste2@email.com", "Rua teste2", dataCadastro);
+        clienteList = cadastraCliente.cadastraClientes("123.456.789-01", "Teste2", "98899-9999", null, null);
         assertThat(clienteList.size(), is(2));
     }
 }

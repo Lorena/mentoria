@@ -16,7 +16,7 @@ public class RemoverClienteTest {
 
         List<Cliente> listaDeCliente = new ArrayList<Cliente>();
         Date data = new Date();
-        listaDeCliente.add(new Cliente(1, "000.000.000-00", "Lorena", "99999999", "lorena@tw.com.br", "Sem endereco", data));
+        listaDeCliente.add(new Cliente("000.000.000-00", "Lorena", "99999999", "lorena@tw.com.br", null));
         RemoverCliente removerCliente = new RemoverCliente(listaDeCliente);
 
        String mensagem = removerCliente.removerClientePorCPF("000.000.000-00");
@@ -28,7 +28,7 @@ public class RemoverClienteTest {
     public void deveRetornarListaDeClientesNaoDeletados() throws Exception {
         List<Cliente> listaDeCliente = new ArrayList<Cliente>();
         Date data = new Date();
-        listaDeCliente.add(new Cliente(1, "000.000.000-00", "Lorena", "99999999", "lorena@tw.com.br", "Sem endereco", data));
+        listaDeCliente.add(new Cliente("000.000.000-00", "Lorena", "99999999", "lorena@tw.com.br", null));
         RemoverCliente removerCliente = new RemoverCliente(listaDeCliente);
 
         List<Cliente> clienteLista = removerCliente.getListaDeCliente();
@@ -40,7 +40,7 @@ public class RemoverClienteTest {
     public void deveVerificarSeExcluiuOCliente() throws Exception, ClienteNaoEncontradoException {
         List<Cliente> listaDeCliente = new ArrayList<Cliente>();
         Date data = new Date();
-        listaDeCliente.add(new Cliente(1, "000.000.000-00", "Lorena", "99999999", "lorena@tw.com.br", "Sem endereco", data));
+        listaDeCliente.add(new Cliente("000.000.000-00", "Lorena", "99999999", "lorena@tw.com.br", null));
         RemoverCliente removerCliente = new RemoverCliente(listaDeCliente);
 
         removerCliente.removerClientePorCPF("000.000.000-00");

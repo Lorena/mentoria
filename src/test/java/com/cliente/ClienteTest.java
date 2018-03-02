@@ -1,7 +1,7 @@
 package com.cliente;
 
 import org.junit.Test;
-import com.cliente.Cliente;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -11,7 +11,7 @@ public class ClienteTest {
 
     @Test(expected = Exception.class)
     public void naoDeveCadastrarClienteQuandoNaoExistirCpf() throws Exception {
-     new Cliente(2, null, "Erica", "98999-9999", "erica@email.com", "Rua ABC, 123", null);
+     new Cliente(null, "Erica", "98999-9999", "erica@email.com", null);
     }
 
     @Test
@@ -21,16 +21,16 @@ public class ClienteTest {
         String nome = "Teste";
         String telefone = "98999-9999";
         String email = "teste@email.com";
-        String endereco = "Rua ABC, 123";
-        Date dataCadastro = new SimpleDateFormat("yyyyMMdd").parse("20180220");
+        Date dataNascimento = new SimpleDateFormat("yyyyMMdd").parse("20180220");
 
-        Cliente cliente = new Cliente(codigo, cpf, nome, telefone, email, endereco, dataCadastro);
+        Cliente cliente = new Cliente(cpf, nome, telefone, email, dataNascimento);
 
-        assertThat(cliente.getCodigo(), is(codigo));
+        assertThat(cliente.getCpf(), is(cpf));
     }
 
     @Test(expected = Exception.class)
     public void naoDeveCadastrarClienteSemPreencherUmContato() throws Exception{
-        new Cliente(2, "136.707.026-01", "Erica", null, null, "Rua ABC, 123", null);
+        new Cliente("136.707.026-01", "Erica", null, null, null
+        );
     }
 }
