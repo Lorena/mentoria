@@ -2,6 +2,7 @@ package com.pedido;
 
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static org.hamcrest.core.Is.is;
@@ -17,6 +18,7 @@ public class PedidoTest {
         double quantidadeMmCubicos = 5.0 ;
         String enderecoEntrega = "Rua ABC";
         String enderecoRecuperacao = "Rua ABC";
+        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180329");
 
         Pedido pedido = new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataEntrega);
 
@@ -29,9 +31,9 @@ public class PedidoTest {
         double quantidadeMmCubicos = 5.0 ;
         String enderecoEntrega = "Rua ABC";
         String enderecoRecuperacao = "Rua ABC";
-        Date dataPedido = new Date();
+        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180329");
 
-        Pedido pedido = new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido);
+        Pedido pedido = new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataEntrega);
 
         assertThat(pedido.getEnderecoRecuperacao(), is(pedido.getEnderecoEntrega()));
     }
@@ -42,9 +44,9 @@ public class PedidoTest {
         double quantidadeMmCubicos = 5.0 ;
         String enderecoEntrega = "Rua ABC";
         String enderecoRecuperacao = "Rua EFG";
-        Date dataPedido = new Date();
+        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180329");
 
-       new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido);
+        new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataEntrega);
     }
 
     @Test
@@ -53,9 +55,9 @@ public class PedidoTest {
         double quantidadeMmCubicos = 5.0 ;
         String enderecoEntrega = "Rua ABC";
         String enderecoRecuperacao = "Rua ABC";
-        Date dataPedido = new Date();
+        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180329");
 
-        Pedido pedido = new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido);
+        Pedido pedido = new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataEntrega);
 
         assertThat(pedido.getEnderecoRecuperacao(), is(pedido.getEnderecoEntrega()));
     }
@@ -66,8 +68,8 @@ public class PedidoTest {
         double quantidadeMmCubicos = 5.0 ;
         String enderecoEntrega = "Rua ABC";
         String enderecoRecuperacao = "Rua EFG";
-        Date dataPedido = new Date();
+        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180329");
 
-        new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido);
+        new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataEntrega);
     }
 }
