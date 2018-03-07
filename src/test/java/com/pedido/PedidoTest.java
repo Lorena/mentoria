@@ -1,5 +1,6 @@
 package com.pedido;
 
+import org.hamcrest.core.Is;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
@@ -78,6 +79,17 @@ public class PedidoTest {
         new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
     }
 
-//    @Test
-//    public void verificaDataEntrega
+    @Test
+    public void verificaSeDataPedidoEAnteriorADataEntrega() throws Exception {
+        String gas = "Monóxido de Carbono";
+        double quantidadeMmCubicos = 5.0 ;
+        String enderecoEntrega = "Rua ABC";
+        String enderecoRecuperacao = "Rua EFG";
+        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180329");
+        Date dataPedido = new Date();
+
+        Pedido pedido = new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
+
+        assertThat(pedido.getDataEntrega(), Is.<Date>is(dataPedido.before(dataEntrega)));
+    }
 }

@@ -18,6 +18,8 @@ public class Pedido {
         this.quantidadeMmCubicos = quantidadeMmCubicos;
         this.enderecoEntrega = enderecoEntrega;
         this.enderecoRecuperacao = enderecoRecuperacao;
+        this.dataPedido = dataPedido;
+        this.dataEntrega = dataPedido;
     }
 
     private void verificaEnderecoValidoParaMonoxidoOuDioxido(String gas, String enderecoEntrega, String enderecoRecuperacao) throws Exception {
@@ -32,5 +34,9 @@ public class Pedido {
 
     public String getEnderecoEntrega() {
         return enderecoEntrega;
+    }
+
+    public Date getDataEntrega() {
+        return dataEntrega;
     }
 }
