@@ -8,8 +8,10 @@ public class Pedido {
     private double quantidadeMmCubicos;
     private String enderecoEntrega;
     private String enderecoRecuperacao;
+    private Date dataPedido;
+    private Date dataEntrega;
 
-    public Pedido(String gas, double quantidadeMmCubicos, String enderecoEntrega, String enderecoRecuperacao, Date dataPedido)
+    public Pedido(String gas, double quantidadeMmCubicos, String enderecoEntrega, String enderecoRecuperacao, Date dataPedido, Date dataEntrega)
     throws Exception{
         verificaEnderecoValidoParaMonoxidoOuDioxido(gas, enderecoEntrega, enderecoRecuperacao);
         this.gas = gas;
@@ -23,7 +25,6 @@ public class Pedido {
             throw new Exception("Pedido não cadastrado.");
         }
     }
-
 
     public String getEnderecoRecuperacao() {
         return enderecoRecuperacao;
