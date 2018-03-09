@@ -99,7 +99,7 @@ public class PedidoTest {
         double quantidadeMmCubicos = 5.0 ;
         String enderecoEntrega = "Rua ABC";
         String enderecoRecuperacao = "Rua ABC";
-        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180309");
+        Date dataEntrega = new Date();
         Date dataPedido = new Date();
 
         new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
