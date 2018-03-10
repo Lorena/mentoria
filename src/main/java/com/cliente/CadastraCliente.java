@@ -8,7 +8,7 @@ public class CadastraCliente {
     private List<Cliente> clientes = new ArrayList<Cliente>();
 
     public List<Cliente> cadastraClientes(String cpf, String nome, String telefone, String email, Date dataNascimento) throws Exception {
-        clientes.add(new Cliente(cpf, nome, telefone, email, dataNascimento ));
+        clientes.add(new Cliente(cpf, nome, telefone, email, dataNascimento, null ));
        return clientes;
     }
 

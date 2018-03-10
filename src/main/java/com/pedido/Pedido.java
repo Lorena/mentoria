@@ -18,14 +18,18 @@ public class Pedido {
 
     public Pedido(String gas, double quantidadeMmCubicos, String enderecoEntrega, String enderecoRecuperacao, Date dataPedido, Date dataEntrega)
     throws Exception{
-        verificaEnderecoValidoParaMonoxidoOuDioxido(gas, enderecoEntrega, enderecoRecuperacao);
-        verificaSeDataEntregaEValida(dataPedido, dataEntrega);
+        validaPedido(gas, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
         this.gas = gas;
         this.quantidadeMmCubicos = quantidadeMmCubicos;
         this.enderecoEntrega = enderecoEntrega;
         this.enderecoRecuperacao = enderecoRecuperacao;
         this.dataPedido = dataPedido;
-        this.dataEntrega = dataPedido;
+        this.dataEntrega = dataEntrega;
+    }
+
+    private void validaPedido(String gas, String enderecoEntrega, String enderecoRecuperacao, Date dataPedido, Date dataEntrega) throws Exception {
+        verificaEnderecoValidoParaMonoxidoOuDioxido(gas, enderecoEntrega, enderecoRecuperacao);
+        verificaSeDataEntregaEValida(dataPedido, dataEntrega);
     }
 
     private void verificaEnderecoValidoParaMonoxidoOuDioxido(String gas, String enderecoEntrega, String enderecoRecuperacao) throws Exception {
@@ -79,9 +83,5 @@ public class Pedido {
 
     public String getEnderecoEntrega() {
         return enderecoEntrega;
-    }
-
-    public Date getDataEntrega() {
-        return dataEntrega;
     }
 }

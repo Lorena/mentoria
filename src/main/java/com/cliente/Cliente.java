@@ -1,5 +1,6 @@
 package com.cliente;
 
+import com.pedido.Pedido;
 import java.util.Date;
 
 public class Cliente {
@@ -9,8 +10,9 @@ public class Cliente {
     private String telefone;
     private String email;
     private Date dataNascimento;
+    private Pedido pedido;
 
-    public Cliente(String cpf, String nome, String telefone, String email, Date dataNascimento)
+    public Cliente(String cpf, String nome, String telefone, String email, Date dataNascimento, Pedido pedido)
             throws Exception{
         if (cpf == null || telefone == null && email == null){
             throw new Exception("Produto não cadastrado.");
@@ -20,6 +22,7 @@ public class Cliente {
         this.telefone = telefone;
         this.email = email;
         this.dataNascimento = dataNascimento;
+        this.pedido = pedido;
     }
 
     public String getCpf() {
@@ -49,5 +52,4 @@ public class Cliente {
     public String getEmail() {
         return email;
     }
-
 }

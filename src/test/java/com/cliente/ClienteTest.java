@@ -11,7 +11,7 @@ public class ClienteTest {
 
     @Test(expected = Exception.class)
     public void naoDeveCadastrarClienteQuandoNaoExistirCpf() throws Exception {
-     new Cliente(null, "Erica", "98999-9999", "erica@email.com", null);
+     new Cliente(null, "Erica", "98999-9999", "erica@email.com", null, null);
     }
 
     @Test
@@ -23,14 +23,14 @@ public class ClienteTest {
         String email = "teste@email.com";
         Date dataNascimento = new SimpleDateFormat("yyyyMMdd").parse("20180220");
 
-        Cliente cliente = new Cliente(cpf, nome, telefone, email, dataNascimento);
+        Cliente cliente = new Cliente(cpf, nome, telefone, email, dataNascimento, null);
 
         assertThat(cliente.getCpf(), is(cpf));
     }
 
     @Test(expected = Exception.class)
     public void naoDeveCadastrarClienteSemPreencherUmContato() throws Exception{
-        new Cliente("136.707.026-01", "Erica", null, null, null
-        );
+        new Cliente("136.707.026-01", "Erica", null, null, null,
+                null);
     }
 }

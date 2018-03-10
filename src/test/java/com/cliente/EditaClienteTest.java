@@ -10,7 +10,7 @@ public class EditaClienteTest {
 
     @Test
     public void editaNomeCliente() throws Exception {
-        Cliente cliente = new Cliente("123.456.789-00", "Erica", "98999-9999", "erica@email.com", null);
+        Cliente cliente = new Cliente("123.456.789-00", "Erica", "98999-9999", "erica@email.com", null, null);
         List<Cliente> clienteList = new ArrayList<Cliente>();
         clienteList.add(cliente);
 
@@ -23,7 +23,7 @@ public class EditaClienteTest {
 
     @Test
     public void editaTelefoneCliente() throws Exception {
-        Cliente cliente = new Cliente("123.456.789-00", "Erica", "98999-9999", "erica@email.com", null);
+        Cliente cliente = new Cliente("123.456.789-00", "Erica", "98999-9999", "erica@email.com", null, null);
         List<Cliente> clienteList = new ArrayList<Cliente>();
         clienteList.add(cliente);
 
@@ -36,7 +36,7 @@ public class EditaClienteTest {
 
    @Test
    public void editaEmailCliente() throws Exception {
-       Cliente cliente = new Cliente("123.456.789-00", "Erica", "98999-9999", "erica@email.com", null);
+       Cliente cliente = new Cliente("123.456.789-00", "Erica", "98999-9999", "erica@email.com", null,null);
        List<Cliente> clienteList = new ArrayList<Cliente>();
        clienteList.add(cliente);
 
