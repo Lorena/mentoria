@@ -3,7 +3,6 @@ package com.pedido;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -26,9 +25,12 @@ public class CadastraPedidoTest {
         Date dataPedido = new Date();
 
         List<Pedido> pedidoList =  cadastraPedido.cadastraPedido("Monóxido de Carbono", 5.0, "Rua ABC", "Rua ABC", dataEntrega, dataPedido);
-        pedidoList = cadastraPedido.cadastraPedido("Dióxido de Carbono", 5.0, "Rua EFG", "Rua EFG", dataEntrega, dataPedido);
-        pedidoList = cadastraPedido.cadastraPedido("Gás Hélio", 5.0, "Rua EFG", "Rua ABC", dataEntrega, dataPedido);
+        assertThat(pedidoList.size(), is(1));
 
+        pedidoList = cadastraPedido.cadastraPedido("Dióxido de Carbono", 5.0, "Rua EFG", "Rua EFG", dataEntrega, dataPedido);
+        assertThat(pedidoList.size(), is(2));
+
+        pedidoList = cadastraPedido.cadastraPedido("Gás Hélio", 5.0, "Rua EFG", "Rua ABC", dataEntrega, dataPedido);
         assertThat(pedidoList.size(), is(3));
     }
 

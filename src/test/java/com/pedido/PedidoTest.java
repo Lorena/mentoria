@@ -1,11 +1,12 @@
 package com.pedido;
 
-import org.hamcrest.core.Is;
+import org.joda.time.Days;
+import org.joda.time.ReadableInstant;
 import org.junit.Test;
-
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
-
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
 import static org.hamcrest.core.IsNull.nullValue;
@@ -33,7 +34,7 @@ public class PedidoTest {
         double quantidadeMmCubicos = 5.0 ;
         String enderecoEntrega = "Rua ABC";
         String enderecoRecuperacao = "Rua ABC";
-        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180301");
+        Date dataPedido = new Date();
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180329");
 
         Pedido pedido = new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
@@ -79,7 +80,7 @@ public class PedidoTest {
         new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
     }
 
-    @Test (expected = Exception.class) //corrigir esse teste
+    @Test (expected = Exception.class)
     public void naoDeveCadastrarPedidoSeDataEntregaTerMenosDeSeteDiasAntecedencia() throws Exception {
         String gas = "Monóxido de Carbono";
         double quantidadeMmCubicos = 5.0 ;
