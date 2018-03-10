@@ -33,8 +33,8 @@ public class PedidoTest {
         double quantidadeMmCubicos = 5.0 ;
         String enderecoEntrega = "Rua ABC";
         String enderecoRecuperacao = "Rua ABC";
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180301");
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180329");
-        Date dataPedido = new Date();
 
         Pedido pedido = new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
 

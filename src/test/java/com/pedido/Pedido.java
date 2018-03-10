@@ -14,7 +14,7 @@ public class Pedido {
     public Pedido(String gas, double quantidadeMmCubicos, String enderecoEntrega, String enderecoRecuperacao, Date dataPedido, Date dataEntrega)
     throws Exception{
         verificaEnderecoValidoParaMonoxidoOuDioxido(gas, enderecoEntrega, enderecoRecuperacao);
-        verificaSeDataEntregaTemSeteDiasAntecedencia(dataPedido, dataEntrega);
+        verificaSeDataEntregaEValida(dataPedido, dataEntrega);
         this.gas = gas;
         this.quantidadeMmCubicos = quantidadeMmCubicos;
         this.enderecoEntrega = enderecoEntrega;
@@ -29,7 +29,7 @@ public class Pedido {
         }
     }
 
-    private void verificaSeDataEntregaTemSeteDiasAntecedencia(Date dataPedido, Date dataEntrega) throws Exception {
+    private void verificaSeDataEntregaEValida(Date dataPedido, Date dataEntrega) throws Exception {
         if(dataPedido.equals(dataEntrega) || dataPedido.after(dataEntrega)){
             throw new Exception("Pedido não cadastrado.");
         }
