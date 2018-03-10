@@ -79,30 +79,28 @@ public class PedidoTest {
         new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
     }
 
-    @Test
-    public void verificaSeDataPedidoEAnteriorADataEntrega() throws Exception {
-        String gas = "Monóxido de Carbono";
-        double quantidadeMmCubicos = 5.0 ;
-        String enderecoEntrega = "Rua ABC";
-        String enderecoRecuperacao = "Rua ABC";
-        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180329");
-        Date dataPedido = new Date();
-
-        new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
-
-        assertTrue(dataPedido.before(dataEntrega));
-    }
-
-    @Test (expected = Exception.class)
+    @Test (expected = Exception.class) //corrigir esse teste
     public void naoDeveCadastrarPedidoSeDataEntregaTerMenosDeSeteDiasAntecedencia() throws Exception {
         String gas = "Monóxido de Carbono";
         double quantidadeMmCubicos = 5.0 ;
         String enderecoEntrega = "Rua ABC";
         String enderecoRecuperacao = "Rua ABC";
-        Date dataEntrega = new Date();
-        Date dataPedido = new Date();
+        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180309");
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180329");
 
         new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
+    }
+
+    @Test (expected = Exception.class)
+    public void naoDeveCadastrarPedidoSeDataEntregaForIgualADataPedido() throws Exception {
+            String gas = "Monóxido de Carbono";
+            double quantidadeMmCubicos = 5.0 ;
+            String enderecoEntrega = "Rua ABC";
+            String enderecoRecuperacao = "Rua ABC";
+            Date dataEntrega = new Date();
+            Date dataPedido = new Date();
+
+            new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
     }
 
 }
