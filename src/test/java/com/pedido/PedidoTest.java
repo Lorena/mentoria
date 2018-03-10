@@ -103,4 +103,15 @@ public class PedidoTest {
             new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
     }
 
+    @Test (expected = Exception.class)
+    public void naoDeveCadastrarPedidoSeDataPedidoForAposDataEntrega() throws Exception {
+        String gas = "Monóxido de Carbono";
+        double quantidadeMmCubicos = 5.0 ;
+        String enderecoEntrega = "Rua ABC";
+        String enderecoRecuperacao = "Rua ABC";
+        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180309");
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180315");
+
+        new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
+    }
 }
