@@ -15,11 +15,12 @@ public class WhiteGasTest {
     public void deveCadastrarPedidoParaWhiteGasComSucesso() throws Exception {
         int qtdNovosCilindros = 1;
         Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180314");;
-        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
+        Date dataEntregaPedido = new SimpleDateFormat("yyyyMMdd").parse("20180330");
+        Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180316");
 
-        Pedido pedido = new Pedido("Gás Hélio", 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
+        Pedido pedido = new Pedido("Gás Hélio", 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntregaPedido);
 
-        WhiteGas whiteGas = new WhiteGas(pedido, qtdNovosCilindros, dataPedido);
+        WhiteGas whiteGas = new WhiteGas(pedido, qtdNovosCilindros, dataPedido, dataEnvioPedido);
         assertThat(whiteGas, is(not(nullValue())));
     }
 
@@ -28,9 +29,22 @@ public class WhiteGasTest {
         int qtdNovosCilindros = 1;
         Date dataPedido = new Date();
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
+        Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180316");
 
         Pedido pedido = new Pedido("Gás Hélio", 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
 
-        WhiteGas whiteGas = new WhiteGas(pedido, qtdNovosCilindros, dataPedido);
+        new WhiteGas(pedido, qtdNovosCilindros, dataPedido, dataEnvioPedido);
+    }
+
+    @Test(expected = Exception.class)
+    public void deveRetornarErroSeDataEnvioPedidoForAntesDeSextaFeira() throws Exception {
+        int qtdNovosCilindros = 1;
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180308");
+        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
+        Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180315");
+
+        Pedido pedido = new Pedido("Gás Hélio", 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
+
+        new WhiteGas(pedido, qtdNovosCilindros, dataPedido, dataEnvioPedido);
     }
 }

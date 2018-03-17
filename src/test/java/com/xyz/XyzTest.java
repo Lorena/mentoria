@@ -54,7 +54,7 @@ public class XyzTest {
         Pedido pedido = new Pedido(gas, 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
         Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido, qtdCilindroCheio, pedido);
 
-        WhiteGas whiteGas = new WhiteGas(pedido,  qtdNovosCilindros, dataPedido);
+        WhiteGas whiteGas = new WhiteGas(pedido,  qtdNovosCilindros, dataPedido, dataPedido);
     }
 
 }
