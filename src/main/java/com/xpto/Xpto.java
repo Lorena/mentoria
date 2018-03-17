@@ -1,7 +1,6 @@
 package com.xpto;
 
 import com.cliente.Cliente;
-
 import java.util.ArrayList;
 import java.util.List;
 
