@@ -4,7 +4,11 @@ import com.pedido.Pedido;
 
 public class Xyz {
 
-    public Xyz(int qtdCilindroCheio, Pedido pedido) {
+    private int qtdCilindroCheio;
+    private Pedido pedido;
 
+    public Xyz(int qtdCilindroCheio, Pedido pedido) {
+        this.qtdCilindroCheio = qtdCilindroCheio;
+        this.pedido = pedido;
     }
 }
