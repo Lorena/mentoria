@@ -42,7 +42,7 @@ public class XyzTest {
 
     @Test(expected = Exception.class)
     public void deveRetornarErroSeNaoHouverCilindroParaGasPedidoEPedirParaWhiteGas() throws Exception {
-        int qtdCilindroGasHelio = 9;
+        int qtdCilindroGasHelio = 0;
         int qtdCilindroMonoxido = 20;
         int qtdCilindroDioxido = 10;
         int qtdCilindroCheio = qtdCilindroDioxido + qtdCilindroGasHelio + qtdCilindroMonoxido;
