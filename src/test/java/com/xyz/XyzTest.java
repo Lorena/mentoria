@@ -14,39 +14,45 @@ public class XyzTest {
 
     @Test
     public void cadastraPedidoParaXyzComSucesso() throws Exception {
-        int qtdCilindroCheio = 10;
-        String tipoGas = null;
+        int qtdCilindroGasHelio = 10;
+        int qtdCilindroMonoxido = 20;
+        int qtdCilindroDioxido = 10;
+        int qtdCilindroCheio = qtdCilindroDioxido + qtdCilindroGasHelio + qtdCilindroMonoxido;
         Date dataPedido = new Date();
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
 
         Pedido pedido = new Pedido("Gás Hélio", 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
-        Xyz xyz = new Xyz(qtdCilindroCheio, tipoGas, pedido);
+        Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido, qtdCilindroCheio, pedido);
 
         assertThat(xyz, is(not(nullValue())));
     }
 
     @Test(expected = Exception.class)
     public void deveRetornarErroSeNaoHouverDezCilindrosCheios() throws Exception {
-        int qtdCilindroCheio = 5;
-        String tipoGas = "Gás Hélio";
+        int qtdCilindroGasHelio = 1;
+        int qtdCilindroMonoxido = 1;
+        int qtdCilindroDioxido = 1;
+        int qtdCilindroCheio = qtdCilindroDioxido + qtdCilindroGasHelio + qtdCilindroMonoxido;
         Date dataPedido = new Date();
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
 
         Pedido pedido = new Pedido("Gás Hélio", 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
-        Xyz xyz = new Xyz(qtdCilindroCheio, tipoGas, pedido);
+        Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido, qtdCilindroCheio, pedido);
     }
 
     @Test(expected = Exception.class)
     public void deveRetornarErroSeNaoHouverCilindroParaGasPedidoEPedirParaWhiteGas() throws Exception {
-        int qtdCilindroCheio = 10;
+        int qtdCilindroGasHelio = 9;
+        int qtdCilindroMonoxido = 20;
+        int qtdCilindroDioxido = 10;
+        int qtdCilindroCheio = qtdCilindroDioxido + qtdCilindroGasHelio + qtdCilindroMonoxido;
         int qtdNovosCilindros = 1;
         String gas = "Gás Hélio";
-        String tipoGas = gas;
         Date dataPedido = new Date();
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
 
         Pedido pedido = new Pedido(gas, 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
-        Xyz xyz = new Xyz(qtdCilindroCheio, tipoGas, pedido);
+        Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido, qtdCilindroCheio, pedido);
 
         WhiteGas whiteGas = new WhiteGas(pedido,  qtdNovosCilindros, dataPedido);
     }
