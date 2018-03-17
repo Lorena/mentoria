@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 public class XyzTest {
 
     @Test
-    public void deveExistirDezCilindrosCheios() throws Exception {
+    public void cadastraPedidoParaXyzComSucesso() throws Exception {
         int qtdCilindroCheio = 10;
         Date dataPedido = new Date();
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
