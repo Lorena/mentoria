@@ -36,19 +36,19 @@ public class Xyz {
 
     private void validaSeExisteCilindroDeGasHelioDisponivel(int qtdCilindroGasHelio) throws Exception {
         if(qtdCilindroGasHelio == 0){
-            throw new Exception("Não possuímos cilindros de Gás Hélio disponível. Iremos solicitar para o fornecedor.");
+            throw new Exception("Não possuímos cilindros de Gás Hélio disponível no momento. Na semana seguinte iremos enviá-lo.");
         }
     }
 
     private void validaSeExisteCilindroDeMonoxidoDisponivel(int qtdCilindroMonoxido) throws Exception {
         if(qtdCilindroMonoxido == 0){
-            throw new Exception("Não possuímos cilindros de Monóxido de Carbono disponível. Iremos solicitar para o fornecedor.");
+            throw new Exception("Não possuímos cilindros de Monóxido de Carbono disponível no momento. Na semana seguinte iremos enviá-lo.");
         }
     }
 
     private void validaSeExisteCilindroDeDioxidoDisponivel(int qtdCilindroDioxido) throws Exception {
         if(qtdCilindroDioxido == 0){
-            throw new Exception("Não possuímos cilindros de Dióxido de Carbono disponível. Iremos solicitar para o fornecedor.");
+            throw new Exception("Não possuímos cilindros de Dióxido de Carbono disponível no momento. Na semana seguinte iremos enviá-lo.");
         }
     }
 }
