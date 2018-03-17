@@ -14,4 +14,6 @@ public class WhiteGas {
         this.qtdNovosCilindros = qtdNovosCilindros;
         this.dataPedido = dataPedido;
     }
+
+
 }
