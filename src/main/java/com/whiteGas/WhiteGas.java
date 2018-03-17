@@ -12,13 +12,13 @@ public class WhiteGas {
 
 
     public WhiteGas(Pedido pedido, int qtdNovosCilindros, Date dataPedido) throws Exception {
-        verificaDataPedidoAntesDeQuintaFeira(dataPedido);
+        validaDataPedidoAntesDeQuintaFeira(dataPedido);
         this.pedido = pedido;
         this.qtdNovosCilindros = qtdNovosCilindros;
         this.dataPedido = dataPedido;
     }
 
-    private void verificaDataPedidoAntesDeQuintaFeira(Date dataPedido) throws Exception {
+    private void validaDataPedidoAntesDeQuintaFeira(Date dataPedido) throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Date dataValidar = sdf.parse(String.valueOf(dataPedido));
         GregorianCalendar gc = new GregorianCalendar();
