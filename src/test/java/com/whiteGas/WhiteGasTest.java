@@ -20,6 +20,11 @@ public class WhiteGasTest {
 
         Pedido pedido = new Pedido("Gás Hélio", 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntregaPedido);
 
+        //Quando a WhiteGas é construida ele precisa ser construída com o Pedido?
+        // Acho que ele só precisa ser construído com o que realmente representa a empresa WhiteGas
+        //Talvz o cadastrar pedido para a WhiteGas seja um método a parte ao invés de usar o construtor
+        //o que acha?
+
         WhiteGas whiteGas = new WhiteGas(pedido, qtdNovosCilindros, dataPedido, dataEnvioPedido);
         assertThat(whiteGas, is(not(nullValue())));
     }

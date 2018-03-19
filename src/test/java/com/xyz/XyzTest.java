@@ -22,6 +22,15 @@ public class XyzTest {
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
 
         Pedido pedido = new Pedido("Gás Hélio", 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
+        //Quando a XYZ é construida ela precisa ser construída passando o Pedido?
+        // Acho que ela só precisa ser construído com o que realmente representa a empresa XYZ, qtdCilindroGasHelio, qtdCilindroMonoxido e qtdCilindroDioxido
+        //Talvz o cadastrar pedido para a XYZ seja um método a parte ao invés de usar o construtor
+        //o que acha?
+        //No construtor só tem que estar as informações que fazem sentido para o objeto todo
+        //Ficaria algo assim:
+        // Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
+        // xyz.cadastrarPedido(pedido);
+
         Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido, qtdCilindroCheio, pedido);
 
         assertThat(xyz, is(not(nullValue())));

@@ -22,6 +22,8 @@ public class XptoTest {
         Cliente cliente = new Cliente("123.456.789-00", "Erica", "9 9988-9988", "erica.viana@email.com", dataNascimento, pedido);
 
         Xpto xpto = new Xpto();
+
+        //O que vc acha de renomear o nome desse método para cadastraClienteComPedidoDesejado(cliente)?
         List<Cliente> clienteList = xpto.cadastraClienteEPedido(cliente);
 
         assertThat(clienteList.size(), is(1));
