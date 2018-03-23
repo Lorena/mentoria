@@ -8,7 +8,7 @@ public class Xpto {
 
     private List<Cliente> clientes = new ArrayList<>();
 
-    public List<Cliente> cadastraClienteEPedido(Cliente cliente) {
+    public List<Cliente> cadastraClienteComPedidoDesejado(Cliente cliente) {
         clientes.add(cliente);
         return clientes;
     }

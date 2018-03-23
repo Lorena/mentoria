@@ -50,20 +50,16 @@ public class XyzTest {
     }
 
     @Test(expected = Exception.class)
-    public void deveRetornarErroSeNaoHouverCilindroParaGasPedidoEPedirParaWhiteGas() throws Exception {
+    public void deveRetornarErroSeNaoHouverCilindroParaGasPedido() throws Exception {
         int qtdCilindroGasHelio = 0;
         int qtdCilindroMonoxido = 20;
         int qtdCilindroDioxido = 10;
         int qtdCilindroCheio = qtdCilindroDioxido + qtdCilindroGasHelio + qtdCilindroMonoxido;
-        int qtdNovosCilindros = 1;
         String gas = "Gás Hélio";
         Date dataPedido = new Date();
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
 
         Pedido pedido = new Pedido(gas, 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
-        Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido, qtdCilindroCheio, pedido);
-
-        WhiteGas whiteGas = new WhiteGas(pedido,  qtdNovosCilindros, dataPedido, dataPedido);
+        new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido, qtdCilindroCheio, pedido);
     }
-
 }

@@ -7,14 +7,12 @@ import java.util.GregorianCalendar;
 
 public class WhiteGas {
 
-    private Pedido pedido;
     private int qtdNovosCilindros;
     private Date dataPedido;
     private Date dataEnvioPedido;
 
-    public WhiteGas(Pedido pedido, int qtdNovosCilindros, Date dataPedido, Date dataEnvioPedido) throws Exception {
+    public WhiteGas(int qtdNovosCilindros, Date dataPedido, Date dataEnvioPedido) throws Exception {
         validaDataPedidoAntesDeQuintaFeira(dataPedido);
-        this.pedido = pedido;
         this.qtdNovosCilindros = qtdNovosCilindros;
         this.dataPedido = dataPedido;
         this.dataEnvioPedido = dataEnvioPedido;

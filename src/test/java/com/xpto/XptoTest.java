@@ -23,8 +23,7 @@ public class XptoTest {
 
         Xpto xpto = new Xpto();
 
-        //O que vc acha de renomear o nome desse método para cadastraClienteComPedidoDesejado(cliente)?
-        List<Cliente> clienteList = xpto.cadastraClienteEPedido(cliente);
+        List<Cliente> clienteList = xpto.cadastraClienteComPedidoDesejado(cliente);
 
         assertThat(clienteList.size(), is(1));
     }
