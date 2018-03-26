@@ -1,13 +1,14 @@
 package com.xyz;
 
 import com.pedido.Pedido;
+import com.whiteGas.WhiteGas;
 
 public class Xyz {
 
     private int qtdCilindroGasHelio;
     private int qtdCilindroMonoxido;
     private int qtdCilindroDioxido;
-    private int qtdCilindroCheio = qtdCilindroDioxido + qtdCilindroGasHelio + qtdCilindroMonoxido;
+    private int qtdCilindroCheio;
 
     public Xyz(int qtdCilindroGasHelio, int qtdCilindroMonoxido, int qtdCilindroDioxido)
             throws  Exception{
@@ -15,6 +16,11 @@ public class Xyz {
         this.qtdCilindroGasHelio = qtdCilindroGasHelio;
         this.qtdCilindroMonoxido = qtdCilindroMonoxido;
         this.qtdCilindroDioxido = qtdCilindroDioxido;
+        qtdCilindroCheio = qtdCilindroDioxido + qtdCilindroGasHelio + qtdCilindroMonoxido;
+    }
+
+    public void cadastraPedido(Pedido pedido, int qtdCilindroDioxido, int qtdCilindroGasHelio, int qtdCilindroMonoxido) throws Exception {
+
     }
 
     private void validaEstoqueDeCilindros(int qtdCilindroCheio, int qtdCilindroDioxido, int qtdCilindroMonoxido, int qtdCilindroGasHelio)

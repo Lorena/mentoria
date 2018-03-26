@@ -21,7 +21,7 @@ public class PedidoTest {
         String enderecoEntrega = "Rua ABC";
         String enderecoRecuperacao = "Rua ABC";
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180329");
-        Date dataPedido = new Date();
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180310");
 
         Pedido pedido = new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
 
@@ -34,7 +34,7 @@ public class PedidoTest {
         double quantidadeMmCubicos = 5.0 ;
         String enderecoEntrega = "Rua ABC";
         String enderecoRecuperacao = "Rua ABC";
-        Date dataPedido = new Date();
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180310");
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180329");
 
         Pedido pedido = new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
@@ -49,7 +49,7 @@ public class PedidoTest {
         String enderecoEntrega = "Rua ABC";
         String enderecoRecuperacao = "Rua EFG";
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180329");
-        Date dataPedido = new Date();
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180310");
 
         new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
     }
@@ -61,7 +61,7 @@ public class PedidoTest {
         String enderecoEntrega = "Rua ABC";
         String enderecoRecuperacao = "Rua ABC";
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180329");
-        Date dataPedido = new Date();
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180310");
 
         Pedido pedido = new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
 
