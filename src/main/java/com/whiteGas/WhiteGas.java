@@ -12,8 +12,8 @@ public class WhiteGas {
     private Date dataEnvioPedido;
 
     public WhiteGas(int qtdNovosCilindros, Date dataPedido, Date dataEnvioPedido) throws Exception {
-       // validaDataPedidoAntesDeQuintaFeira(dataPedido);
-       // validaDataEnvioPedidoAntesDeSextaFeira(dataEnvioPedido);
+        validaDataPedidoAntesDeQuintaFeira(dataPedido);
+        validaDataEnvioPedidoAntesDeSextaFeira(dataEnvioPedido);
         this.qtdNovosCilindros = qtdNovosCilindros;
         this.dataPedido = dataPedido;
         this.dataEnvioPedido = dataEnvioPedido;
