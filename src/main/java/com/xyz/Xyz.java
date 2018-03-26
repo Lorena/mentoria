@@ -7,17 +7,14 @@ public class Xyz {
     private int qtdCilindroGasHelio;
     private int qtdCilindroMonoxido;
     private int qtdCilindroDioxido;
-    private int qtdCilindroCheio;
-    private Pedido pedido;
+    private int qtdCilindroCheio = qtdCilindroDioxido + qtdCilindroGasHelio + qtdCilindroMonoxido;
 
-    public Xyz(int qtdCilindroGasHelio, int qtdCilindroMonoxido, int qtdCilindroDioxido, int qtdCilindroCheio, Pedido pedido)
+    public Xyz(int qtdCilindroGasHelio, int qtdCilindroMonoxido, int qtdCilindroDioxido)
             throws  Exception{
         validaEstoqueDeCilindros(qtdCilindroCheio, qtdCilindroDioxido, qtdCilindroMonoxido, qtdCilindroGasHelio);
         this.qtdCilindroGasHelio = qtdCilindroGasHelio;
         this.qtdCilindroMonoxido = qtdCilindroMonoxido;
         this.qtdCilindroDioxido = qtdCilindroDioxido;
-        this.qtdCilindroCheio = qtdCilindroCheio;
-        this.pedido = pedido;
     }
 
     private void validaEstoqueDeCilindros(int qtdCilindroCheio, int qtdCilindroDioxido, int qtdCilindroMonoxido, int qtdCilindroGasHelio)

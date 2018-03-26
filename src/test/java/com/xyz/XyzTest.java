@@ -31,7 +31,7 @@ public class XyzTest {
         // Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
         // xyz.cadastrarPedido(pedido);
 
-        Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido, qtdCilindroCheio, pedido);
+        Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
 
         assertThat(xyz, is(not(nullValue())));
     }
@@ -46,7 +46,7 @@ public class XyzTest {
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
 
         Pedido pedido = new Pedido("Gás Hélio", 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
-        Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido, qtdCilindroCheio, pedido);
+        Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
     }
 
     @Test(expected = Exception.class)
@@ -60,6 +60,6 @@ public class XyzTest {
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
 
         Pedido pedido = new Pedido(gas, 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
-        new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido, qtdCilindroCheio, pedido);
+        new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
     }
 }

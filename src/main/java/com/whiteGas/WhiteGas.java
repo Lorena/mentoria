@@ -12,7 +12,8 @@ public class WhiteGas {
     private Date dataEnvioPedido;
 
     public WhiteGas(int qtdNovosCilindros, Date dataPedido, Date dataEnvioPedido) throws Exception {
-        validaDataPedidoAntesDeQuintaFeira(dataPedido);
+       // validaDataPedidoAntesDeQuintaFeira(dataPedido);
+       // validaDataEnvioPedidoAntesDeSextaFeira(dataEnvioPedido);
         this.qtdNovosCilindros = qtdNovosCilindros;
         this.dataPedido = dataPedido;
         this.dataEnvioPedido = dataEnvioPedido;
@@ -32,7 +33,7 @@ public class WhiteGas {
 
     private void validaDataEnvioPedidoAntesDeSextaFeira(Date dataEnvioPedido) throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        Date dataValidar = sdf.parse(String.valueOf(dataPedido));
+        Date dataValidar = sdf.parse(String.valueOf(dataEnvioPedido));
         GregorianCalendar gc = new GregorianCalendar();
         gc.setTime(dataValidar);
         int diaDaSemana = gc.get(GregorianCalendar.DAY_OF_WEEK);

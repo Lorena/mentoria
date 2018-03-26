@@ -14,11 +14,8 @@ public class WhiteGasTest {
     @Test
     public void deveCadastrarPedidoParaWhiteGasComSucesso() throws Exception {
         int qtdNovosCilindros = 1;
-        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180314");;
-        Date dataEntregaPedido = new SimpleDateFormat("yyyyMMdd").parse("20180330");
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180212");;
         Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180316");
-
-        Pedido pedido = new Pedido("Gás Hélio", 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntregaPedido);
 
         WhiteGas whiteGas = new WhiteGas(qtdNovosCilindros, dataPedido, dataEnvioPedido);
         assertThat(whiteGas, is(not(nullValue())));
@@ -28,10 +25,7 @@ public class WhiteGasTest {
     public void deveRetornarErroSeDataPedidoForDepoisDeQuintaFeira() throws Exception {
         int qtdNovosCilindros = 1;
         Date dataPedido = new Date();
-        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
         Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180316");
-
-        Pedido pedido = new Pedido("Gás Hélio", 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
 
         new WhiteGas(qtdNovosCilindros, dataPedido, dataEnvioPedido);
     }
@@ -40,10 +34,7 @@ public class WhiteGasTest {
     public void deveRetornarErroSeDataEnvioPedidoForAntesDeSextaFeira() throws Exception {
         int qtdNovosCilindros = 1;
         Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180308");
-        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
         Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180315");
-
-        Pedido pedido = new Pedido("Gás Hélio", 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
 
         new WhiteGas(qtdNovosCilindros, dataPedido, dataEnvioPedido);
     }
