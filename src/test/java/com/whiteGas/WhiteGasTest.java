@@ -4,6 +4,8 @@ import com.pedido.Pedido;
 import org.junit.Test;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
 import static org.hamcrest.core.IsNull.nullValue;
@@ -16,9 +18,12 @@ public class WhiteGasTest {
         int qtdNovosCilindros = 1;
         Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180212");;
         Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180316");
+        List<WhiteGas> pedidoList;
 
         WhiteGas whiteGas = new WhiteGas(qtdNovosCilindros, dataPedido, dataEnvioPedido);
-        assertThat(whiteGas, is(not(nullValue())));
+        pedidoList = whiteGas.cadastraPedido(qtdNovosCilindros, dataPedido, dataEnvioPedido);
+
+        assertThat(pedidoList.size(), is(1));
     }
 
     @Test(expected = Exception.class)
