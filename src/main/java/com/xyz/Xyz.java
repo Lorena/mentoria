@@ -1,7 +1,8 @@
 package com.xyz;
 
 import com.pedido.Pedido;
-import com.whiteGas.WhiteGas;
+
+import java.util.List;
 
 public class Xyz {
 
@@ -19,8 +20,9 @@ public class Xyz {
         qtdCilindroCheio = qtdCilindroDioxido + qtdCilindroGasHelio + qtdCilindroMonoxido;
     }
 
-    public void cadastraPedido(Pedido pedido, int qtdCilindroDioxido, int qtdCilindroGasHelio, int qtdCilindroMonoxido) throws Exception {
+    public List<Xyz> cadastraPedido(Pedido pedido, int qtdCilindroDioxido, int qtdCilindroGasHelio, int qtdCilindroMonoxido) throws Exception {
 
+        return null;
     }
 
     private void validaEstoqueDeCilindros(int qtdCilindroCheio, int qtdCilindroDioxido, int qtdCilindroMonoxido, int qtdCilindroGasHelio)

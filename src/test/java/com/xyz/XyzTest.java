@@ -4,7 +4,10 @@ import com.pedido.Pedido;
 import com.whiteGas.WhiteGas;
 import org.junit.Test;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
 import static org.hamcrest.core.IsNull.nullValue;
@@ -19,13 +22,14 @@ public class XyzTest {
         int qtdCilindroDioxido = 10;
         Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180310");
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
+        List<Xyz> pedidoList = new ArrayList<>();
 
         Pedido pedido = new Pedido("Gás Hélio", 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
 
        Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
-       xyz.cadastraPedido(pedido, qtdCilindroDioxido, qtdCilindroGasHelio, qtdCilindroMonoxido);
+       pedidoList = xyz.cadastraPedido(pedido, qtdCilindroDioxido, qtdCilindroGasHelio, qtdCilindroMonoxido);
 
-        assertThat(xyz, is(not(nullValue())));
+        assertThat(pedidoList.size(), is(1));
     }
 
     @Test(expected = Exception.class)
