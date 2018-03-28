@@ -9,31 +9,31 @@ public class Xyz {
     private int qtdCilindroGasHelio;
     private int qtdCilindroMonoxido;
     private int qtdCilindroDioxido;
-    private int qtdCilindroCheio;
+    private List<Xyz> pedidoList;
 
     public Xyz(int qtdCilindroGasHelio, int qtdCilindroMonoxido, int qtdCilindroDioxido)
             throws  Exception{
-        validaEstoqueDeCilindros(qtdCilindroCheio, qtdCilindroDioxido, qtdCilindroMonoxido, qtdCilindroGasHelio);
+        validaEstoqueDeCilindros(qtdCilindroDioxido, qtdCilindroMonoxido, qtdCilindroGasHelio);
         this.qtdCilindroGasHelio = qtdCilindroGasHelio;
         this.qtdCilindroMonoxido = qtdCilindroMonoxido;
         this.qtdCilindroDioxido = qtdCilindroDioxido;
-        qtdCilindroCheio = qtdCilindroDioxido + qtdCilindroGasHelio + qtdCilindroMonoxido;
     }
 
     public List<Xyz> cadastraPedido(Pedido pedido, int qtdCilindroDioxido, int qtdCilindroGasHelio, int qtdCilindroMonoxido) throws Exception {
-
-        return null;
+        pedidoList.add(new Xyz(qtdCilindroDioxido, qtdCilindroGasHelio, qtdCilindroMonoxido));
+        return pedidoList;
     }
 
-    private void validaEstoqueDeCilindros(int qtdCilindroCheio, int qtdCilindroDioxido, int qtdCilindroMonoxido, int qtdCilindroGasHelio)
+    private void validaEstoqueDeCilindros(int qtdCilindroDioxido, int qtdCilindroMonoxido, int qtdCilindroGasHelio)
     throws Exception{
-        validaSePossuiDezCilindrosCheios(qtdCilindroCheio);
+        validaSePossuiDezCilindrosCheios(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
         validaSeExisteCilindroDeDioxidoDisponivel(qtdCilindroDioxido);
         validaSeExisteCilindroDeMonoxidoDisponivel(qtdCilindroMonoxido);
         validaSeExisteCilindroDeGasHelioDisponivel(qtdCilindroGasHelio);
     }
 
-    private void validaSePossuiDezCilindrosCheios(int qtdCilindroCheio) throws Exception {
+    private void validaSePossuiDezCilindrosCheios(int qtdCilindroGasHelio, int qtdCilindroMonoxido, int qtdCilindroDioxido) throws Exception {
+        int qtdCilindroCheio = qtdCilindroDioxido + qtdCilindroGasHelio + qtdCilindroMonoxido;
         if(qtdCilindroCheio < 10){
             throw new Exception("O estoque de cilindros cheios não pode ser menor que 10.");
         }
