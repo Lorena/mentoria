@@ -14,6 +14,11 @@ public class WhiteGas {
     private Date dataEnvioPedido;
     private List<WhiteGas> pedidoList = new ArrayList<>();
 
+    public List<WhiteGas> cadastraPedido(int qtdNovosCilindros, Date dataPedido, Date dataEnvioPedido) throws Exception {
+        pedidoList.add(new WhiteGas(qtdNovosCilindros, dataPedido, dataEnvioPedido));
+        return pedidoList;
+    }
+
     public WhiteGas(int qtdNovosCilindros, Date dataPedido, Date dataEnvioPedido) throws Exception {
         validaDataPedidoAntesDeQuintaFeira(dataPedido);
         validaDataEnvioPedidoAntesDeSextaFeira(dataEnvioPedido);
@@ -44,10 +49,5 @@ public class WhiteGas {
         if(diaDaSemana >= 6){
             throw new Exception("Os pedidos são enviados às sextas-feiras.");
         }
-    }
-
-    public List<WhiteGas> cadastraPedido(int qtdNovosCilindros, Date dataPedido, Date dataEnvioPedido) throws Exception {
-        pedidoList.add(new WhiteGas(qtdNovosCilindros, dataPedido, dataEnvioPedido));
-        return pedidoList;
     }
 }
