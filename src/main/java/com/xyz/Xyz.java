@@ -2,6 +2,7 @@ package com.xyz;
 
 import com.pedido.Pedido;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Xyz {
@@ -9,7 +10,7 @@ public class Xyz {
     private int qtdCilindroGasHelio;
     private int qtdCilindroMonoxido;
     private int qtdCilindroDioxido;
-    private List<Xyz> pedidoList;
+    private List<Xyz> pedidoList = new ArrayList<>();
 
     public Xyz(int qtdCilindroGasHelio, int qtdCilindroMonoxido, int qtdCilindroDioxido)
             throws  Exception{
@@ -19,7 +20,7 @@ public class Xyz {
         this.qtdCilindroDioxido = qtdCilindroDioxido;
     }
 
-    public List<Xyz> cadastraPedido(Pedido pedido, int qtdCilindroDioxido, int qtdCilindroGasHelio, int qtdCilindroMonoxido) throws Exception {
+    public List<Xyz> cadastraPedido(int qtdCilindroDioxido, int qtdCilindroGasHelio, int qtdCilindroMonoxido) throws Exception {
         pedidoList.add(new Xyz(qtdCilindroDioxido, qtdCilindroGasHelio, qtdCilindroMonoxido));
         return pedidoList;
     }

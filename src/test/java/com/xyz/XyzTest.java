@@ -20,14 +20,10 @@ public class XyzTest {
         int qtdCilindroGasHelio = 10;
         int qtdCilindroMonoxido = 20;
         int qtdCilindroDioxido = 10;
-        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180310");
-        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
-        List<Xyz> pedidoList = new ArrayList<>();
-
-        Pedido pedido = new Pedido("Gás Hélio", 5.0, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
+        List<Xyz> pedidoList;
 
        Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
-       pedidoList = xyz.cadastraPedido(pedido, qtdCilindroDioxido, qtdCilindroGasHelio, qtdCilindroMonoxido);
+       pedidoList = xyz.cadastraPedido(qtdCilindroDioxido, qtdCilindroGasHelio, qtdCilindroMonoxido);
 
         assertThat(pedidoList.size(), is(1));
     }
