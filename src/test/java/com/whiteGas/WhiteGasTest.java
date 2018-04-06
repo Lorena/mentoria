@@ -18,7 +18,7 @@ public class WhiteGasTest {
         int qtdNovosCilindros = 1;
         Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180212");
         Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180316");
-        List<WhiteGas> pedidoList;
+        List<Pedido> pedidoList;
 
         WhiteGas whiteGas = new WhiteGas(qtdNovosCilindros, dataPedido, dataEnvioPedido);
         pedidoList = whiteGas.cadastraPedido(qtdNovosCilindros, dataPedido, dataEnvioPedido);

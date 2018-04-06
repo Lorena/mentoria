@@ -24,8 +24,10 @@ public class Xyz {
     }
 
     public List<Pedido> cadastraPedido(int qtdCilindroDioxido, int qtdCilindroGasHelio, int qtdCilindroMonoxido, Pedido pedido) throws Exception {
-
-        return null;
+        validaEstoqueDeCilindros(qtdCilindroDioxido, qtdCilindroMonoxido, qtdCilindroGasHelio);
+        pedidoList.add(pedido);
+        contadorPedidos++;
+        return pedidoList;
     }
 
     private void validaEstoqueDeCilindros(int qtdCilindroDioxido, int qtdCilindroMonoxido, int qtdCilindroGasHelio)

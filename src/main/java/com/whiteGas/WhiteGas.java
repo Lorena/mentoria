@@ -12,10 +12,10 @@ public class WhiteGas {
     private int qtdNovosCilindros;
     private Date dataPedido;
     private Date dataEnvioPedido;
-    private List<WhiteGas> pedidoList = new ArrayList<>();
+    private List<Pedido> pedidoList = new ArrayList<>();
 
-    public List<WhiteGas> cadastraPedido(int qtdNovosCilindros, Date dataPedido, Date dataEnvioPedido) throws Exception {
-        pedidoList.add(new WhiteGas(qtdNovosCilindros, dataPedido, dataEnvioPedido));
+    public List<Pedido> cadastraPedido(int qtdNovosCilindros, Date dataPedido, Date dataEnvioPedido) throws Exception {
+       //pedidoList.add(new WhiteGas(qtdNovosCilindros, dataPedido, dataEnvioPedido));
         return pedidoList;
     }
 
