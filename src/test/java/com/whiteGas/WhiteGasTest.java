@@ -16,7 +16,7 @@ public class WhiteGasTest {
     @Test
     public void deveCadastrarPedidoParaWhiteGasComSucesso() throws Exception {
         int qtdNovosCilindros = 1;
-        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180212");;
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180212");
         Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180316");
         List<WhiteGas> pedidoList;
 

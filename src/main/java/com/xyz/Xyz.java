@@ -2,7 +2,9 @@ package com.xyz;
 
 import com.pedido.Pedido;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Xyz {
@@ -21,10 +23,9 @@ public class Xyz {
         this.qtdCilindroDioxido = qtdCilindroDioxido;
     }
 
-    public List<Pedido> cadastraPedido(int qtdCilindroDioxido, int qtdCilindroGasHelio, int qtdCilindroMonoxido) throws Exception {
-        pedidoList.add(new Pedido(1,1,1,1,1,1,1));
-        contadorPedidos++;
-        return pedidoList;
+    public List<Pedido> cadastraPedido(int qtdCilindroDioxido, int qtdCilindroGasHelio, int qtdCilindroMonoxido, Pedido pedido) throws Exception {
+
+        return null;
     }
 
     private void validaEstoqueDeCilindros(int qtdCilindroDioxido, int qtdCilindroMonoxido, int qtdCilindroGasHelio)
