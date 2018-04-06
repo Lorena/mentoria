@@ -20,7 +20,7 @@ public class XyzTest {
         int qtdCilindroGasHelio = 10;
         int qtdCilindroMonoxido = 20;
         int qtdCilindroDioxido = 10;
-        List<Xyz> pedidoList;
+        List<Pedido> pedidoList;
 
        Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
        pedidoList = xyz.cadastraPedido(qtdCilindroDioxido, qtdCilindroGasHelio, qtdCilindroMonoxido);
@@ -51,7 +51,7 @@ public class XyzTest {
         int qtdCilindroGasHelio = 10;
         int qtdCilindroMonoxido = 20;
         int qtdCilindroDioxido = 10;
-        List<Xyz> pedidoList;
+        List<Pedido> pedidoList;
 
         Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
         pedidoList = xyz.cadastraPedido(qtdCilindroDioxido, qtdCilindroGasHelio, qtdCilindroMonoxido);

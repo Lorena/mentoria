@@ -10,7 +10,7 @@ public class Xyz {
     private int qtdCilindroGasHelio;
     private int qtdCilindroMonoxido;
     private int qtdCilindroDioxido;
-    private List<Xyz> pedidoList = new ArrayList<>();
+    private List<Pedido> pedidoList = new ArrayList<>();
     private int contadorPedidos = 0;
 
     public Xyz(int qtdCilindroGasHelio, int qtdCilindroMonoxido, int qtdCilindroDioxido)
@@ -21,8 +21,8 @@ public class Xyz {
         this.qtdCilindroDioxido = qtdCilindroDioxido;
     }
 
-    public List<Xyz> cadastraPedido(int qtdCilindroDioxido, int qtdCilindroGasHelio, int qtdCilindroMonoxido) throws Exception {
-        pedidoList.add(new Xyz(qtdCilindroDioxido, qtdCilindroGasHelio, qtdCilindroMonoxido));
+    public List<Pedido> cadastraPedido(int qtdCilindroDioxido, int qtdCilindroGasHelio, int qtdCilindroMonoxido) throws Exception {
+        pedidoList.add(new Pedido(1,1,1,1,1,1,1));
         contadorPedidos++;
         return pedidoList;
     }
