@@ -2,6 +2,8 @@ package com.whiteGas;
 
 import com.pedido.Pedido;
 import org.junit.Test;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -14,10 +16,20 @@ import static org.junit.Assert.*;
 public class WhiteGasTest {
 
     @Test
+    public void deveRetornarVerdadeiroAoIniciarWhiteGas() throws Exception {
+        int qtdNovosCilindros = 1;
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180419");
+        Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180427");
+        WhiteGas whiteGas = new WhiteGas(qtdNovosCilindros, dataPedido, dataEnvioPedido);
+
+        assertThat(whiteGas, is(not(nullValue())));
+    }
+
+    @Test
     public void deveCadastrarPedidoParaWhiteGasComSucesso() throws Exception {
         int qtdNovosCilindros = 1;
-        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180212");
-        Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180316");
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180419");
+        Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180427");
         List<Pedido> pedidoList;
 
         WhiteGas whiteGas = new WhiteGas(qtdNovosCilindros, dataPedido, dataEnvioPedido);

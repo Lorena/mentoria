@@ -14,17 +14,17 @@ public class WhiteGas {
     private Date dataEnvioPedido;
     private List<Pedido> pedidoList = new ArrayList<>();
 
-    public List<Pedido> cadastraPedido(int qtdNovosCilindros, Date dataPedido, Date dataEnvioPedido) throws Exception {
-       //pedidoList.add(new WhiteGas(qtdNovosCilindros, dataPedido, dataEnvioPedido));
-        return pedidoList;
-    }
-
     public WhiteGas(int qtdNovosCilindros, Date dataPedido, Date dataEnvioPedido) throws Exception {
         validaDataPedidoAntesDeQuintaFeira(dataPedido);
         validaDataEnvioPedidoAntesDeSextaFeira(dataEnvioPedido);
         this.qtdNovosCilindros = qtdNovosCilindros;
         this.dataPedido = dataPedido;
         this.dataEnvioPedido = dataEnvioPedido;
+    }
+
+    public List<Pedido> cadastraPedido(int qtdNovosCilindros, Date dataPedido, Date dataEnvioPedido) throws Exception {
+        //pedidoList.add(new WhiteGas(qtdNovosCilindros, dataPedido, dataEnvioPedido));
+        return pedidoList;
     }
 
     private void validaDataPedidoAntesDeQuintaFeira(Date dataPedido) throws Exception {
