@@ -62,32 +62,50 @@ public class XyzTest {
         new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
     }
 
-  @Test
-  public void deveRetornarQuantosPedidosForamRecebidos() throws Exception {
-        int qtdCilindroGasHelio = 10;
-        int qtdCilindroMonoxido = 20;
-        int qtdCilindroDioxido = 10;
-        List<Pedido> pedidoList;
-        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180212");
-        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180413");
-        Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
+//    @Test
+//    public void deveEnviarPedidoParaWhiteGasQuandoNaoHouverGasPedido() throws Exception {
+//        int qtdCilindroGasHelio = 0;
+//        int qtdCilindroMonoxido = 20;
+//        int qtdCilindroDioxido = 10;
+//        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180419");
+//        Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180427");
+//        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180504");
+//
+//        Pedido pedido = new Pedido("Gás Hélio", 5, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
+//        new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
+//
+//        int qtdNovosCilindros = 10;
+//
+//        WhiteGas whiteGas = new WhiteGas(qtdNovosCilindros,dataPedido, dataEnvioPedido);
+//        whiteGas.cadastraPedido(qtdNovosCilindros, dataPedido, dataEnvioPedido, pedido);
+//    }
 
-        Pedido pedido = new Pedido("Monóxido de Carbono", 5, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
-        pedidoList = xyz.cadastraPedido(qtdCilindroDioxido, qtdCilindroGasHelio, qtdCilindroMonoxido, pedido);
+    @Test
+    public void deveRetornarQuantosPedidosForamRecebidos() throws Exception {
+            int qtdCilindroGasHelio = 10;
+            int qtdCilindroMonoxido = 20;
+            int qtdCilindroDioxido = 10;
+            List<Pedido> pedidoList;
+            Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180212");
+            Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180413");
+            Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
 
-        int qtdCilindroGasHelio2 = 20;
-        int qtdCilindroMonoxido2 = 5;
-        int qtdCilindroDioxido2 = 15;
-        Pedido pedido2 = new Pedido("Gás Hélio", 5, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
-        pedidoList = xyz.cadastraPedido(qtdCilindroDioxido2, qtdCilindroGasHelio2, qtdCilindroMonoxido2, pedido2);
+            Pedido pedido = new Pedido("Monóxido de Carbono", 5, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
+            pedidoList = xyz.cadastraPedido(qtdCilindroDioxido, qtdCilindroGasHelio, qtdCilindroMonoxido, pedido);
 
-        int qtdCilindroGasHelio3 = 15;
-        int qtdCilindroMonoxido3 = 5;
-        int qtdCilindroDioxido3 = 20;
-        Pedido pedido3 = new Pedido("Dióxido de Carbono", 5, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
-        pedidoList = xyz.cadastraPedido(qtdCilindroDioxido3, qtdCilindroGasHelio3, qtdCilindroMonoxido3, pedido3);
+            int qtdCilindroGasHelio2 = 20;
+            int qtdCilindroMonoxido2 = 5;
+            int qtdCilindroDioxido2 = 15;
+            Pedido pedido2 = new Pedido("Gás Hélio", 5, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
+            pedidoList = xyz.cadastraPedido(qtdCilindroDioxido2, qtdCilindroGasHelio2, qtdCilindroMonoxido2, pedido2);
 
-        assertThat(pedidoList.size(), is(3));
-   }
+            int qtdCilindroGasHelio3 = 15;
+            int qtdCilindroMonoxido3 = 5;
+            int qtdCilindroDioxido3 = 20;
+            Pedido pedido3 = new Pedido("Dióxido de Carbono", 5, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
+            pedidoList = xyz.cadastraPedido(qtdCilindroDioxido3, qtdCilindroGasHelio3, qtdCilindroMonoxido3, pedido3);
+
+            assertThat(pedidoList.size(), is(3));
+       }
 
 }
