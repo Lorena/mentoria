@@ -30,10 +30,12 @@ public class WhiteGasTest {
         int qtdNovosCilindros = 1;
         Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180419");
         Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180427");
+        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180504");
+        Pedido pedido = new Pedido("Gás Hélio", 5, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
         List<Pedido> pedidoList;
 
         WhiteGas whiteGas = new WhiteGas(qtdNovosCilindros, dataPedido, dataEnvioPedido);
-        pedidoList = whiteGas.cadastraPedido(qtdNovosCilindros, dataPedido, dataEnvioPedido);
+        pedidoList = whiteGas.cadastraPedido(qtdNovosCilindros, dataPedido, dataEnvioPedido, pedido);
 
         assertThat(pedidoList.size(), is(1));
     }
