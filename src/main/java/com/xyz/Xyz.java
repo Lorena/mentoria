@@ -1,11 +1,8 @@
 package com.xyz;
 
 import com.pedido.Pedido;
-import com.whiteGas.WhiteGas;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Xyz {
@@ -18,6 +15,7 @@ public class Xyz {
 
     public Xyz(int qtdCilindroGasHelio, int qtdCilindroMonoxido, int qtdCilindroDioxido)
             throws  Exception{
+        //pq esse método validaEstoqueDeCilindros ta chamando aqui e no cadastraPedido?
         validaEstoqueDeCilindros(qtdCilindroDioxido, qtdCilindroMonoxido, qtdCilindroGasHelio);
         this.qtdCilindroGasHelio = qtdCilindroGasHelio;
         this.qtdCilindroMonoxido = qtdCilindroMonoxido;
@@ -25,9 +23,10 @@ public class Xyz {
     }
 
     public List<Pedido> cadastraPedido(int qtdCilindroDioxido, int qtdCilindroGasHelio, int qtdCilindroMonoxido, Pedido pedido) throws Exception {
+        //para que está passando esses valores como parametro: qtdCilindroDioxido qtdCilindroGasHelio qtdCilindroMonoxido ?
         validaEstoqueDeCilindros(qtdCilindroDioxido, qtdCilindroMonoxido, qtdCilindroGasHelio);
         pedidoList.add(pedido);
-        contadorPedidos++;
+        contadorPedidos++; //para que esse contador? para saber a quantidade de pedidos é só ver o tamanho da lista
         return pedidoList;
     }
 
@@ -40,6 +39,8 @@ public class Xyz {
     }
 
     private void validaSePossuiDezCilindrosCheios(int qtdCilindroGasHelio, int qtdCilindroMonoxido, int qtdCilindroDioxido) throws Exception {
+        //esses valores qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido
+        //deveriam ser os da classe, certo? tipo this.qtdCilindroDioxido
         int qtdCilindroCheio = qtdCilindroDioxido + qtdCilindroGasHelio + qtdCilindroMonoxido;
         if(qtdCilindroCheio < 10){
             throw new Exception("O estoque de cilindros cheios não pode ser menor que 10.");
