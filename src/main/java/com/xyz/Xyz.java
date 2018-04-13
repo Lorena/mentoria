@@ -11,7 +11,7 @@ public class Xyz {
     private int qtdCilindroMonoxido;
     private int qtdCilindroDioxido;
     private List<Pedido> pedidoList = new ArrayList<>();
-    private int contadorPedidos = 0;
+    private List<Pedido> pedidoListWhiteGas = new ArrayList<>();
 
     public Xyz(int qtdCilindroGasHelio, int qtdCilindroMonoxido, int qtdCilindroDioxido)
             throws  Exception{
@@ -24,17 +24,16 @@ public class Xyz {
     public List<Pedido> cadastraPedido(Pedido pedido) throws Exception {
         validaEstoqueDeCilindros(pedido);
         pedidoList.add(pedido);
-        contadorPedidos++; //para que esse contador? para saber a quantidade de pedidos é só ver o tamanho da lista
         return pedidoList;
     }
 
     private void validaEstoqueDeCilindros(Pedido pedido) throws Exception{
         if(pedido.getGas().equals("Dióxido de Carbono")) {
-            validaSeExisteCilindroDeDioxidoDisponivel();
+            validaSeExisteCilindroDeDioxidoDisponivel(pedido);
         }else if(pedido.getGas().equals("Monóxido de Carbono")) {
-           validaSeExisteCilindroDeMonoxidoDisponivel();
+           validaSeExisteCilindroDeMonoxidoDisponivel(pedido);
         }else if(pedido.getGas().equals("Gás Hélio")) {
-            validaSeExisteCilindroDeGasHelioDisponivel();
+            validaSeExisteCilindroDeGasHelioDisponivel(pedido);
         }
     }
 
@@ -45,21 +44,28 @@ public class Xyz {
         }
     }
 
-    private void validaSeExisteCilindroDeGasHelioDisponivel() throws Exception {
+    private void validaSeExisteCilindroDeGasHelioDisponivel(Pedido pedido) throws Exception {
         if(this.qtdCilindroGasHelio == 0){
+            pedidoListWhiteGas.add(new Pedido(pedido.getGas(), pedido.getQuantidadeMmCubicos()));
             throw new Exception("Não possuímos cilindros de Gás Hélio disponível no momento. Na semana seguinte iremos enviá-lo.");
         }
     }
 
-    private void validaSeExisteCilindroDeMonoxidoDisponivel() throws Exception {
+    private void validaSeExisteCilindroDeMonoxidoDisponivel(Pedido pedido) throws Exception {
         if(this.qtdCilindroMonoxido == 0){
+            pedidoListWhiteGas.add(new Pedido(pedido.getGas(), pedido.getQuantidadeMmCubicos()));
             throw new Exception("Não possuímos cilindros de Monóxido de Carbono disponível no momento. Na semana seguinte iremos enviá-lo.");
         }
     }
 
-    private void validaSeExisteCilindroDeDioxidoDisponivel() throws Exception {
+    private void validaSeExisteCilindroDeDioxidoDisponivel(Pedido pedido) throws Exception {
         if(this.qtdCilindroDioxido == 0){
+            pedidoListWhiteGas.add(new Pedido(pedido.getGas(), pedido.getQuantidadeMmCubicos()));
             throw new Exception("Não possuímos cilindros de Dióxido de Carbono disponível no momento. Na semana seguinte iremos enviá-lo.");
         }
+    }
+
+    public List<Pedido> enviarPedidoParaWhiteGas() {
+        return pedidoListWhiteGas;
     }
 }

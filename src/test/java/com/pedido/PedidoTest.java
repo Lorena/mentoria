@@ -115,4 +115,14 @@ public class PedidoTest {
 
         new Pedido(gas, quantidadeMmCubicos, enderecoEntrega, enderecoRecuperacao, dataPedido, dataEntrega);
     }
+
+    @Test
+    public void deveCadastrarPedidoParaWhiteGas(){
+        String gas = "Gás Hélio";
+        double quantidadeMmCubicos = 5.0 ;
+
+        Pedido pedido = new Pedido(gas, quantidadeMmCubicos);
+
+        assertThat(pedido, is(not(nullValue())));
+    }
 }
