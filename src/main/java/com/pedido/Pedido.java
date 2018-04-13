@@ -84,4 +84,8 @@ public class Pedido {
     public String getEnderecoEntrega() {
         return enderecoEntrega;
     }
+
+    public String getGas() {
+        return gas;
+    }
 }
