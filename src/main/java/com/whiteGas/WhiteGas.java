@@ -21,6 +21,7 @@ public class WhiteGas {
     }
 
     public List<Pedido> cadastraPedido(Pedido pedido, Date dataPedido, Date dataEnvioPedido) throws Exception {
+        validaDataPedidoAntesDeQuintaFeira(dataPedido);
         pedidoList.add(pedido);
         return pedidoList;
     }
