@@ -44,7 +44,7 @@ public class WhiteGasTest {
     public void deveRetornarErroSeDataPedidoForDepoisDeQuintaFeira() throws Exception {
         String gas = "Gás Hélio";
         int qtdCilindros = 10;
-        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180411");
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180413");
         Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180427");
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180504");
         Pedido pedido = new Pedido("Gás Hélio", 5, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
