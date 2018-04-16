@@ -9,17 +9,15 @@ import java.util.List;
 
 public class WhiteGas {
 
-    private int qtdNovosCilindros;
+    private String gas;
+    private int qtdCilindros;
     private Date dataPedido;
     private Date dataEnvioPedido;
     private List<Pedido> pedidoList = new ArrayList<>();
 
-    public WhiteGas(int qtdNovosCilindros, Date dataPedido, Date dataEnvioPedido) throws Exception {
-        validaDataPedidoAntesDeQuintaFeira(dataPedido);
-        validaDataEnvioPedidoAntesDeSextaFeira(dataEnvioPedido);
-        this.qtdNovosCilindros = qtdNovosCilindros;
-        this.dataPedido = dataPedido;
-        this.dataEnvioPedido = dataEnvioPedido;
+    public WhiteGas(String gas, int qtdCilindros) throws Exception{
+        this.gas = gas;
+        this.qtdCilindros = qtdCilindros;
     }
 
     public List<Pedido> cadastraPedido(int qtdNovosCilindros, Date dataPedido, Date dataEnvioPedido, Pedido pedido) throws Exception {
