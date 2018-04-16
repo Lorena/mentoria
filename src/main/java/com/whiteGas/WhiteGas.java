@@ -20,7 +20,7 @@ public class WhiteGas {
         this.qtdCilindros = qtdCilindros;
     }
 
-    public List<Pedido> cadastraPedido(int qtdNovosCilindros, Date dataPedido, Date dataEnvioPedido, Pedido pedido) throws Exception {
+    public List<Pedido> cadastraPedido(Pedido pedido, Date dataPedido, Date dataEnvioPedido) throws Exception {
         pedidoList.add(pedido);
         return pedidoList;
     }
