@@ -15,7 +15,7 @@ public class WhiteGas {
     private Date dataEnvioPedido;
     private List<Pedido> pedidoList = new ArrayList<>();
 
-    public WhiteGas(String gas, int qtdCilindros) throws Exception{
+    public WhiteGas(String gas, int qtdCilindros){
         this.gas = gas;
         this.qtdCilindros = qtdCilindros;
     }

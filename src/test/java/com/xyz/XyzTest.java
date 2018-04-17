@@ -128,7 +128,6 @@ public class XyzTest {
             Pedido pedido = new Pedido("Monóxido de Carbono", 5, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
             xyz.cadastraPedido(pedido);
 
-
             Pedido pedido2 = new Pedido("Gás Hélio", 5, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
             xyz.cadastraPedido(pedido2);
 
@@ -137,5 +136,4 @@ public class XyzTest {
 
             assertThat(pedidoList.size(), is(3));
        }
-
 }
