@@ -44,22 +44,25 @@ public class WhiteGasTest {
     public void deveRetornarErroSeDataPedidoForDepoisDeQuintaFeira() throws Exception {
         String gas = "Gás Hélio";
         int qtdCilindros = 10;
-        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180413");
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180420");
         Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180427");
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180504");
         Pedido pedido = new Pedido("Gás Hélio", 5, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
-        List<Pedido> pedidoList;
 
         WhiteGas whiteGas = new WhiteGas(gas, qtdCilindros);
-        pedidoList = whiteGas.cadastraPedido(pedido, dataPedido, dataEnvioPedido);
+        whiteGas.cadastraPedido(pedido, dataPedido, dataEnvioPedido);
     }
 
-//    @Test(expected = Exception.class)
-//    public void deveRetornarErroSeDataEnvioPedidoForAntesDeSextaFeira() throws Exception {
-//        int qtdNovosCilindros = 1;
-//        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180308");
-//        Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180315");
-//
-//        //new WhiteGas(qtdNovosCilindros, dataPedido, dataEnvioPedido);
-//    }
+    @Test(expected = Exception.class)
+    public void deveRetornarErroSeDataEnvioPedidoForAntesDeSextaFeira() throws Exception {
+        String gas = "Gás Hélio";
+        int qtdCilindros = 10;
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180417");
+        Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180419");
+        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180504");
+        Pedido pedido = new Pedido("Gás Hélio", 5, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
+
+        WhiteGas whiteGas = new WhiteGas(gas, qtdCilindros);
+        whiteGas.cadastraPedido(pedido, dataPedido, dataEnvioPedido);
+    }
 }
