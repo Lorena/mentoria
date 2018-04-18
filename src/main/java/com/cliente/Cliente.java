@@ -60,4 +60,7 @@ public class Cliente {
         return email;
     }
 
+    public Pedido getPedido() {
+        return pedido;
+    }
 }

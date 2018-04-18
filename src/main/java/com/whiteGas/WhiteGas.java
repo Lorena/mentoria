@@ -1,6 +1,8 @@
 package com.whiteGas;
 
 import com.pedido.Pedido;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,21 +11,21 @@ import java.util.List;
 
 public class WhiteGas {
 
-    private String gas;
-    private int qtdCilindros;
-    private Date dataPedido;
-    private Date dataEnvioPedido;
+    private Date dataEnvioPedido = new SimpleDateFormat("yyyyMMdd").parse("20180427");
     private List<Pedido> pedidoList = new ArrayList<>();
 
-    public WhiteGas(String gas, int qtdCilindros){
-        this.gas = gas;
-        this.qtdCilindros = qtdCilindros;
+    public WhiteGas() throws ParseException {
+
     }
 
-    public List<Pedido> cadastraPedido(Pedido pedido, Date dataPedido, Date dataEnvioPedido) throws Exception {
+    public List<Pedido> cadastraPedidos(Pedido pedido, Date dataPedido) throws Exception {
         validaDataPedidoAntesDeQuintaFeira(dataPedido);
-        validaDataEnvioPedidoAntesDeSextaFeira(dataEnvioPedido);
         pedidoList.add(pedido);
+        return pedidoList;
+    }
+
+    public List<Pedido> entregaPedidos() throws Exception {
+        validaDataEnvioPedidoAntesDeSextaFeira();
         return pedidoList;
     }
 
@@ -39,9 +41,9 @@ public class WhiteGas {
         }
     }
 
-    private void validaDataEnvioPedidoAntesDeSextaFeira(Date dataEnvioPedido) throws Exception {
+    private void validaDataEnvioPedidoAntesDeSextaFeira() throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        Date dataValidar = sdf.parse(String.valueOf(dataEnvioPedido));
+        Date dataValidar = sdf.parse(String.valueOf(this.dataEnvioPedido));
         GregorianCalendar gc = new GregorianCalendar();
         gc.setTime(dataValidar);
         int diaDaSemana = gc.get(GregorianCalendar.DAY_OF_WEEK);

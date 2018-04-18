@@ -1,10 +1,8 @@
 package com.xyz;
 
 import com.pedido.Pedido;
-import com.whiteGas.WhiteGas;
 import org.junit.Test;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -56,7 +54,7 @@ public class XyzTest {
 
         Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
         xyz.cadastraPedido(pedido);
-        Pedido pedidoEntregue = xyz.entregaPedido();
+        Pedido pedidoEntregue = xyz.entregaPedidoParaCliente();
 
         assertThat(pedido, is(pedidoEntregue));
     }
@@ -73,7 +71,7 @@ public class XyzTest {
 
         Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
         xyz.cadastraPedido(pedido);
-        xyz.entregaPedido();
+        xyz.entregaPedidoParaCliente();
     }
 
     @Test(expected = Exception.class)

@@ -23,13 +23,13 @@ public class Xyz {
     }
 
     public List<Pedido> cadastraPedido(Pedido pedido) throws Exception {
-        validaEstoqueDeCilindros(pedido); //remover futuramente
+//        validaEstoqueDeCilindros(pedido); //remover futuramente
         pedidoList.add(pedido);
         this.pedidoAtual = pedido;
         return pedidoList;
     }
 
-    public Pedido entregaPedido() throws Exception {
+    public Pedido entregaPedidoParaCliente() throws Exception {
         validaEstoqueDeCilindros(this.pedidoAtual);
         return this.pedidoAtual;
     }
@@ -74,5 +74,9 @@ public class Xyz {
 
     public List<Pedido> enviarPedidoParaWhiteGas() {
         return pedidoListWhiteGas;
+    }
+
+    public void recebePedidoDeWhiteGas(List<Pedido> listaDePedidosDeWitheGas) {
+        //fazer
     }
 }
