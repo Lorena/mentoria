@@ -8,7 +8,7 @@ public class Xpto {
 
     private List<Cliente> clientes = new ArrayList<>();
 
-    public List<Cliente> cadastraClienteComPedidoDesejado(Cliente cliente) {
+    public List<Cliente> agendarPedidoDoClienteComUmaSemanaDeAntecedencia(Cliente cliente) {
         clientes.add(cliente);
         return clientes;
     }

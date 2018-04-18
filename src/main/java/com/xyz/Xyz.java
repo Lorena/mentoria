@@ -10,6 +10,7 @@ public class Xyz {
     private int qtdCilindroGasHelio;
     private int qtdCilindroMonoxido;
     private int qtdCilindroDioxido;
+    private Pedido pedidoAtual;
     private List<Pedido> pedidoList = new ArrayList<>();
     private List<Pedido> pedidoListWhiteGas = new ArrayList<>();
 
@@ -22,9 +23,15 @@ public class Xyz {
     }
 
     public List<Pedido> cadastraPedido(Pedido pedido) throws Exception {
-        validaEstoqueDeCilindros(pedido);
+        validaEstoqueDeCilindros(pedido); //remover futuramente
         pedidoList.add(pedido);
+        this.pedidoAtual = pedido;
         return pedidoList;
+    }
+
+    public Pedido entregaPedido() throws Exception {
+        validaEstoqueDeCilindros(this.pedidoAtual);
+        return this.pedidoAtual;
     }
 
     private void validaEstoqueDeCilindros(Pedido pedido) throws Exception{

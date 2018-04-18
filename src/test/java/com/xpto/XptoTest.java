@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 public class XptoTest {
 
     @Test
-    public void deveCadastrarClienteEPedido() throws Exception {
+    public void clienteDeveAgendarPedidoComSucesso() throws Exception {
         Date dataNascimento = new SimpleDateFormat("yyyyMMdd").parse("19970614");
         Date dataPedido = new Date();
         Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180330");
@@ -23,7 +23,7 @@ public class XptoTest {
 
         Xpto xpto = new Xpto();
 
-        List<Cliente> clienteList = xpto.cadastraClienteComPedidoDesejado(cliente);
+        List<Cliente> clienteList = xpto.agendarPedidoDoClienteComUmaSemanaDeAntecedencia(cliente);
 
         assertThat(clienteList.size(), is(1));
     }

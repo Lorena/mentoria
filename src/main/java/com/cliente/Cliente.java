@@ -15,7 +15,7 @@ public class Cliente {
     public Cliente(String cpf, String nome, String telefone, String email, Date dataNascimento, Pedido pedido)
             throws Exception{
         if (cpf == null || telefone == null && email == null){
-            throw new Exception("Produto não cadastrado.");
+            throw new Exception("Informações inválidas.");
         }
         this.cpf = cpf;
         this.nome = nome;
@@ -23,6 +23,13 @@ public class Cliente {
         this.email = email;
         this.dataNascimento = dataNascimento;
         this.pedido = pedido;
+    }
+
+    public boolean receberPedido(Pedido pedidoDeXyz) {
+        if (pedidoDeXyz.equals(this.pedido)) {
+            return true;
+        }
+        return false;
     }
 
     public String getCpf() {
@@ -52,4 +59,5 @@ public class Cliente {
     public String getEmail() {
         return email;
     }
+
 }

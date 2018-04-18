@@ -44,6 +44,38 @@ public class XyzTest {
         assertThat(pedidoList.size(), is(1));
     }
 
+    @Test
+    public void deveEntregarPedidoQuandoDisponivel() throws Exception {
+        int qtdCilindroGasHelio = 10;
+        int qtdCilindroMonoxido = 20;
+        int qtdCilindroDioxido = 10;
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180212");
+        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180413");
+
+        Pedido pedido = new Pedido("Gás Hélio", 5, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
+
+        Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
+        xyz.cadastraPedido(pedido);
+        Pedido pedidoEntregue = xyz.entregaPedido();
+
+        assertThat(pedido, is(pedidoEntregue));
+    }
+
+    @Test (expected = Exception.class)
+    public void deveRetornarErroQuandoGasPedidoIndisponivel() throws Exception {
+        int qtdCilindroGasHelio = 0;
+        int qtdCilindroMonoxido = 20;
+        int qtdCilindroDioxido = 10;
+        Date dataPedido = new SimpleDateFormat("yyyyMMdd").parse("20180212");
+        Date dataEntrega = new SimpleDateFormat("yyyyMMdd").parse("20180413");
+
+        Pedido pedido = new Pedido("Gás Hélio", 5, "Rua ABC", "Rua ABC", dataPedido, dataEntrega);
+
+        Xyz xyz = new Xyz(qtdCilindroGasHelio, qtdCilindroMonoxido, qtdCilindroDioxido);
+        xyz.cadastraPedido(pedido);
+        xyz.entregaPedido();
+    }
+
     @Test(expected = Exception.class)
     public void deveRetornarErroSeNaoHouverDezCilindrosCheios() throws Exception {
         int qtdCilindroGasHelio = 1;
